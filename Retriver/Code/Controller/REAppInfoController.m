@@ -32,20 +32,24 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 
 - (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
+        NSArray *allKeys;
         if ([info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
             _isRoot = YES;
             _propertyList = [info valueForKeyPath:kREPropertyListKeyPath];
-            _keyList = [_propertyList allKeys];
+            allKeys = [_propertyList allKeys];
         } else if ([info isKindOfClass:NSClassFromString(@"LSPlugInKitProxy")]) {
             _isRoot = YES;
             _propertyList = [info valueForKey:kREPluginPropertyKey];
-            _keyList = [_propertyList allKeys];
+            allKeys = [_propertyList allKeys];
         } else if ([info isKindOfClass:NSDictionary.class]) {
             _propertyList = info;
-            _keyList = [_propertyList allKeys];
+            allKeys = [_propertyList allKeys];
         } else if ([info isKindOfClass:NSArray.class]) {
-            _keyList = info;
+            allKeys = info;
         }
+        _keyList = [allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            return [[obj1 description] compare:[obj2 description]];
+        }];
     }
     return self;
 }
