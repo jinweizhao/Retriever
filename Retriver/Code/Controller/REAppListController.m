@@ -16,11 +16,17 @@ typedef NS_ENUM(NSInteger, REListType) {
     REListTypePlugin
 };
 
-@interface REAppListController ()<UITableViewDelegate, UITableViewDataSource>
+@interface REAppListController ()<
+    UITableViewDelegate,
+    UITableViewDataSource,
+    UISearchResultsUpdating
+>
 
 @property (nonatomic, strong) NSArray *apps;
+@property (nonatomic, strong) NSArray *filtered;
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) RETableView *tableView;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -45,6 +51,11 @@ typedef NS_ENUM(NSInteger, REListType) {
         make.edges.equalTo(self.view);
     }];
     
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
     [self refresh];
 }
 
@@ -54,9 +65,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
     [self refresh];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                          atScrollPosition:UITableViewScrollPositionTop
-                                  animated:YES];
+    [self.tableView setContentOffset:CGPointMake(0, -64) animated:YES];
 }
 
 - (void)refresh {
@@ -81,6 +90,7 @@ typedef NS_ENUM(NSInteger, REListType) {
         NSString *name2 = [REWorkspace displayNameForApplication:obj2];
         return [name1 compare:name2];
     }];
+    self.filtered = self.apps;
     
     [self.tableView reloadData];
 }
@@ -88,7 +98,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.apps.count;
+    return self.filtered.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,15 +107,40 @@ typedef NS_ENUM(NSInteger, REListType) {
     if (cell == nil) {
         cell = [[REAppListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    [cell render:self.apps[indexPath.row]];
+    [cell render:self.filtered[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:self.apps[indexPath.row]];
+    REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:self.filtered[indexPath.row]];
     infoController.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    self.searchController.active = NO;
     [self.navigationController pushViewController:infoController animated:YES];
+}
+
+#pragma mark - Search
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchText = searchController.searchBar.text.lowercaseString;
+    if (isBlankText(searchText)) {
+        self.filtered = self.apps;
+        [self.tableView reloadData];
+    } else {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSMutableArray *filtered = [NSMutableArray array];
+            for (id app in self.apps) {
+                NSString *name = [REWorkspace displayNameForApplication:app];
+                if ([name.lowercaseString containsString:searchController.searchBar.text.lowercaseString]) {
+                    [filtered addObject:app];
+                }
+            }
+            self.filtered = filtered;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        });
+    }
 }
 
 @end
