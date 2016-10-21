@@ -53,33 +53,36 @@ typedef NS_ENUM(NSInteger, REListType) {
 }
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
+    [self refresh];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+}
+
+- (void)refresh {
+    
+    NSArray *apps = [REWorkspace installedApplications];
+    NSArray *plugins = [REWorkspace installedPlugins];
     NSArray *data;
-    switch (sender.selectedSegmentIndex) {
-        case REListTypeApp:
-            data = [REWorkspace installedApplications];
-            break;
-        case REListTypePlugin:
-            data = [REWorkspace installedPlugins];
-            break;
-        default:
-            break;
+    
+    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
+                  forSegmentAtIndex:REListTypeApp];
+    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
+                  forSegmentAtIndex:REListTypePlugin];
+    
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case REListTypeApp: data = apps; break;
+        case REListTypePlugin: data = plugins; break;
+        default: break;
     }
+    
     self.apps = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSString *name1 = [REWorkspace displayNameForApplication:obj1];
         NSString *name2 = [REWorkspace displayNameForApplication:obj2];
         return [name1 compare:name2];
     }];
+    
     [self.tableView reloadData];
-}
-
-- (void)refresh {
-    NSArray *apps = [REWorkspace installedApplications];
-    NSArray *plugins = [REWorkspace installedPlugins];
-    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
-                  forSegmentAtIndex:REListTypeApp];
-    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
-                  forSegmentAtIndex:REListTypePlugin];
-    [self didSegementedControlValueChanged:self.segmentedControl];
 }
 
 #pragma mark - UITableView
