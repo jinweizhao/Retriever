@@ -7,6 +7,7 @@ Retrive InfoPlist file without Jailbreak on iOS Devices
 3. Plist file will display as a list
 4. Click top-right button to share Plist file with Share Sheet
 5. Click `CFBundleURLTypes` if you're looking for URL Schemes
+6. Click `Apps` or `Plugins` to switch
 
 # Screenshots
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/1.jpg)
