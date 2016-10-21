@@ -21,6 +21,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 
 @interface REInfoController ()<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) BOOL isRoot;
 @property (nonatomic, strong) NSDictionary *propertyList;
 @property (nonatomic, strong) NSArray *keyList;
 @property (nonatomic, strong) RETableView *tableView;
@@ -32,6 +33,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 - (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
         if ([info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
+            _isRoot = YES;
             _propertyList = [info valueForKeyPath:kREPropertyListKeyPath];
             _keyList = [_propertyList allKeys];
         } else if ([info isKindOfClass:NSDictionary.class]) {
@@ -45,8 +47,17 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    if (self.isRoot) {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
+                                                                              target:self
+                                                                              action:@selector(share:)];
+        self.navigationItem.rightBarButtonItem = item;
+    }
+    
     self.tableView = [[RETableView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -54,6 +65,15 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+- (void)share:(UIBarButtonItem *)sender {
+    NSString *path = AppDocumentPath([NSString stringWithFormat:@"%@.plist", self.title]);
+    [self.propertyList writeToFile:path atomically:YES];
+    NSURL *fileUrl = [NSURL fileURLWithPath:path];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
+                                                                                         applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 #pragma mark - UITableView

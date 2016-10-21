@@ -15,4 +15,8 @@ static NSString *const kREPropertyListKeyPath       = @"_infoDictionary.property
 static NSString *const kREDisplayNameKeyPath        = @"_infoDictionary.propertyList.CFBundleDisplayName";
 static NSString *const kRELocalizedShortNameKey     = @"localizedShortName";
 
+static inline NSString *AppDocumentPath(NSString *name) {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:name];
+}
+
 #endif /* REDefine_h */
