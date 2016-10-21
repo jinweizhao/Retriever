@@ -52,13 +52,12 @@ typedef NS_ENUM(NSInteger, REListType) {
 }
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
-    id workspace = [NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"];
     switch (sender.selectedSegmentIndex) {
         case REListTypeApp:
-            self.apps = [workspace invoke:@"allInstalledApplications"];
+            self.apps = [REWorkspace installedApplications];
             break;
         case REListTypePlugin:
-            self.apps = [workspace invoke:@"installedPlugins"];
+            self.apps = [REWorkspace installedPlugins];
             break;
         default:
             break;
@@ -67,9 +66,8 @@ typedef NS_ENUM(NSInteger, REListType) {
 }
 
 - (void)refresh {
-    id workspace = [NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"];
-    NSArray *apps = [workspace invoke:@"allInstalledApplications"];
-    NSArray *plugins = [workspace invoke:@"installedPlugins"];
+    NSArray *apps = [REWorkspace installedApplications];
+    NSArray *plugins = [REWorkspace installedPlugins];
     self.apps = apps;
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
                   forSegmentAtIndex:REListTypeApp];

@@ -27,6 +27,7 @@
 		877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97A1DB9B9CD00D83C27 /* EXTScope.m */; };
 		877EF97F1DB9BA1900D83C27 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97E1DB9BA1900D83C27 /* RETableView.m */; };
 		877EF9861DB9BE7000D83C27 /* REInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REInfoController.m */; };
+		87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		877EF9841DB9BE7000D83C27 /* REInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoController.h; sourceTree = "<group>"; };
 		877EF9851DB9BE7000D83C27 /* REInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoController.m; sourceTree = "<group>"; };
 		877EF9871DB9BECE00D83C27 /* REDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
+		87A5F10F1DBA1A6C00CE6772 /* REWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWorkspace.h; sourceTree = "<group>"; };
+		87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWorkspace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				877EF9871DB9BECE00D83C27 /* REDefine.h */,
+				87A5F10F1DBA1A6C00CE6772 /* REWorkspace.h */,
+				87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				877EF96F1DB9B8E300D83C27 /* MASViewConstraint.m in Sources */,
 				877EF96E1DB9B8E300D83C27 /* MASViewAttribute.m in Sources */,
 				877EF97F1DB9BA1900D83C27 /* RETableView.m in Sources */,
+				87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */,
 				877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */,
 				877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */,
 				877EF94A1DB9B77500D83C27 /* REViewController.m in Sources */,
@@ -477,6 +483,7 @@
 				877EF92C1DB9B08300D83C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
