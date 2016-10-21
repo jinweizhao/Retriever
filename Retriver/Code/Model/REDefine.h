@@ -13,6 +13,7 @@
 
 static NSString *const kREPropertyListKeyPath       = @"_infoDictionary.propertyList";
 static NSString *const kREDisplayNameKeyPath        = @"_infoDictionary.propertyList.CFBundleDisplayName";
+static NSString *const kREPluginPropertyKey         = @"infoPlist";
 static NSString *const kRELocalizedShortNameKey     = @"localizedShortName";
 
 static inline BOOL isBlankText(NSString *str) {

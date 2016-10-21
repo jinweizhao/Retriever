@@ -11,9 +11,15 @@
 #import "RETableViewCell.h"
 #import "REInfoController.h"
 
+typedef NS_ENUM(NSInteger, REListType) {
+    REListTypeApp       = 0,
+    REListTypePlugin
+};
+
 @interface REViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *apps;
+@property (nonatomic, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) RETableView *tableView;
 
 @end
@@ -21,8 +27,15 @@
 @implementation REViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"Apps", @"Plugins"]];
+    
+    [self.segmentedControl addTarget:self 
+                              action:@selector(didSegementedControlValueChanged:)
+                    forControlEvents:UIControlEventValueChanged];
+    
     self.tableView = [[RETableView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -30,11 +43,39 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    [self refresh];
+}
+
+- (UISegmentedControl *)segmentedControl {
+    return (UISegmentedControl *)self.navigationItem.titleView;
+}
+
+- (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
+    id workspace = [NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"];
+    switch (sender.selectedSegmentIndex) {
+        case REListTypeApp:
+            self.apps = [workspace invoke:@"allInstalledApplications"];
+            break;
+        case REListTypePlugin:
+            self.apps = [workspace invoke:@"installedPlugins"];
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadData];
 }
 
 - (void)refresh {
-    self.apps = [[NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"] invoke:@"allApplications"];
-    self.title = [NSString stringWithFormat:@"Retriver (%d)", (int)self.apps.count];
+    id workspace = [NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"];
+    NSArray *apps = [workspace invoke:@"allInstalledApplications"];
+    NSArray *plugins = [workspace invoke:@"installedPlugins"];
+    self.apps = apps;
+    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
+                  forSegmentAtIndex:REListTypeApp];
+    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
+                  forSegmentAtIndex:REListTypePlugin];
+    self.segmentedControl.selectedSegmentIndex = REListTypeApp;
     [self.tableView reloadData];
 }
 
@@ -56,8 +97,9 @@
         cell = [[RETableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     id app = self.apps[indexPath.row];
+    id bundle = [app invoke:@"containingBundle"] ?: app;
     cell.imageView.image = [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
-                                 arguments:@[[app valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
+                                 arguments:@[[bundle valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
     cell.imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = [self displayNameAtIndexPath:indexPath];

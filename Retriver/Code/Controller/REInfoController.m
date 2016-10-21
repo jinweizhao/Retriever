@@ -36,6 +36,10 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
             _isRoot = YES;
             _propertyList = [info valueForKeyPath:kREPropertyListKeyPath];
             _keyList = [_propertyList allKeys];
+        } else if ([info isKindOfClass:NSClassFromString(@"LSPlugInKitProxy")]) {
+            _isRoot = YES;
+            _propertyList = [info valueForKey:kREPluginPropertyKey];
+            _keyList = [_propertyList allKeys];
         } else if ([info isKindOfClass:NSDictionary.class]) {
             _propertyList = info;
             _keyList = [_propertyList allKeys];
