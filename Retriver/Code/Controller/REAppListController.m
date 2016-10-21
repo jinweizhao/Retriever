@@ -1,22 +1,22 @@
 //
-//  REViewController.m
+//  REAppListController.m
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
 //  Copyright © 2016年 cyan. All rights reserved.
 //
 
-#import "REViewController.h"
+#import "REAppListController.h"
 #import "RETableView.h"
-#import "RETableViewCell.h"
-#import "REInfoController.h"
+#import "REAppListCell.h"
+#import "REAppInfoController.h"
 
 typedef NS_ENUM(NSInteger, REListType) {
     REListTypeApp       = 0,
     REListTypePlugin
 };
 
-@interface REViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface REAppListController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *apps;
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 @end
 
-@implementation REViewController
+@implementation REAppListController
 
 - (void)viewDidLoad {
     
@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, REListType) {
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"Apps", @"Plugins"]];
     
+    self.segmentedControl.selectedSegmentIndex = REListTypeApp;
     [self.segmentedControl addTarget:self 
                               action:@selector(didSegementedControlValueChanged:)
                     forControlEvents:UIControlEventValueChanged];
@@ -68,21 +69,14 @@ typedef NS_ENUM(NSInteger, REListType) {
 - (void)refresh {
     NSArray *apps = [REWorkspace installedApplications];
     NSArray *plugins = [REWorkspace installedPlugins];
-    self.apps = apps;
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
                   forSegmentAtIndex:REListTypeApp];
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
                   forSegmentAtIndex:REListTypePlugin];
-    self.segmentedControl.selectedSegmentIndex = REListTypeApp;
-    [self.tableView reloadData];
+    [self didSegementedControlValueChanged:self.segmentedControl];
 }
 
 #pragma mark - UITableView
-
-- (NSString *)displayNameAtIndexPath:(NSIndexPath *)indexPath {
-    id app = self.apps[indexPath.row];
-    return [([app valueForKeyPath:kREDisplayNameKeyPath] ?: [app valueForKey:kRELocalizedShortNameKey]) description];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.apps.count;
@@ -90,24 +84,18 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"REHomeCell";
-    RETableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    REAppListCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[RETableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[REAppListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    id app = self.apps[indexPath.row];
-    id bundle = [app invoke:@"containingBundle"] ?: app;
-    cell.imageView.image = [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
-                                 arguments:@[[bundle valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
-    cell.imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [self displayNameAtIndexPath:indexPath];
+    [cell render:self.apps[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    REInfoController *infoController = [[REInfoController alloc] initWithInfo:self.apps[indexPath.row]];
-    infoController.title = [self displayNameAtIndexPath:indexPath];
+    REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:self.apps[indexPath.row]];
+    infoController.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     [self.navigationController pushViewController:infoController animated:YES];
 }
 

@@ -1,5 +1,5 @@
 //
-//  RETableViewCell.h
+//  REAppListController.h
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RETableViewCell : UITableViewCell
+@interface REAppListController : UIViewController
+
+- (void)refresh;
 
 @end
+

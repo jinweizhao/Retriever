@@ -1,14 +1,14 @@
 //
-//  REInfoController.m
+//  REAppInfoController.m
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
 //  Copyright © 2016年 cyan. All rights reserved.
 //
 
-#import "REInfoController.h"
+#import "REAppInfoController.h"
 #import "RETableView.h"
-#import "RETableViewCell.h"
+#import "REAppInfoCell.h"
 
 typedef NS_ENUM(NSInteger, REInfoType) {
     REInfoTypeDictionary    = 0,
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, REInfoType) {
 
 typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle);
 
-@interface REInfoController ()<UITableViewDelegate, UITableViewDataSource>
+@interface REAppInfoController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) BOOL isRoot;
 @property (nonatomic, strong) NSDictionary *propertyList;
@@ -28,7 +28,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 
 @end
 
-@implementation REInfoController
+@implementation REAppInfoController
 
 - (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
@@ -118,16 +118,14 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"REInfoCell";
-    RETableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    REAppInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[RETableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[REAppInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     @weakify(cell)
     [self fetchInfoWithIndexPath:indexPath completionHandler:^(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle) {
         @strongify(cell)
-        cell.accessoryType = accessoryType;
-        cell.textLabel.text = title;
-        cell.detailTextLabel.text = subtitle;
+        [cell setAccessoryType:accessoryType title:title subtitle:subtitle];
     }];
     return cell;
 }
@@ -137,7 +135,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     id key = self.keyList[indexPath.row];
     if ([self infoTypeAtIndexPath:indexPath] != REInfoTypeValue) {
         id info = self.propertyList ? self.propertyList[key] : key;
-        REInfoController *infoController = [[REInfoController alloc] initWithInfo:info];
+        REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:info];
         [self fetchInfoWithIndexPath:indexPath completionHandler:^(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle) {
             infoController.title = title;
         }];

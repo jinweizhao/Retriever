@@ -7,18 +7,18 @@
 //
 
 #import "REAppDelegate.h"
-#import "REViewController.h"
+#import "REAppListController.h"
 
 @interface REAppDelegate()
 
-@property (nonatomic, strong) REViewController *viewController;
+@property (nonatomic, strong) REAppListController *viewController;
 
 @end
 
 @implementation REAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.viewController = REViewController.new;
+    self.viewController = REAppListController.new;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [self.window makeKeyAndVisible];

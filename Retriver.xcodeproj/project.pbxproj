@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		877EF9181DB9B08300D83C27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9171DB9B08300D83C27 /* main.m */; };
 		877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF93F1DB9B77500D83C27 /* REAppDelegate.m */; };
-		877EF94A1DB9B77500D83C27 /* REViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9421DB9B77500D83C27 /* REViewController.m */; };
+		877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9421DB9B77500D83C27 /* REAppListController.m */; };
 		877EF94B1DB9B77500D83C27 /* RuntimeInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9471DB9B77500D83C27 /* RuntimeInvoker.m */; };
 		877EF94D1DB9B7AE00D83C27 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877EF94C1DB9B7AE00D83C27 /* Media.xcassets */; };
 		877EF94F1DB9B7C000D83C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877EF94E1DB9B7C000D83C27 /* LaunchScreen.storyboard */; };
@@ -23,11 +23,13 @@
 		877EF9711DB9B8E300D83C27 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9641DB9B8E300D83C27 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9661DB9B8E300D83C27 /* View+MASAdditions.m */; };
 		877EF9731DB9B8E300D83C27 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9691DB9B8E300D83C27 /* ViewController+MASAdditions.m */; };
-		877EF9771DB9B94E00D83C27 /* RETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9761DB9B94E00D83C27 /* RETableViewCell.m */; };
 		877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97A1DB9B9CD00D83C27 /* EXTScope.m */; };
-		877EF97F1DB9BA1900D83C27 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97E1DB9BA1900D83C27 /* RETableView.m */; };
-		877EF9861DB9BE7000D83C27 /* REInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REInfoController.m */; };
+		877EF9861DB9BE7000D83C27 /* REAppInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REAppInfoController.m */; };
 		87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */; };
+		87A5F1151DBA667B00CE6772 /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1141DBA667B00CE6772 /* REAppListCell.m */; };
+		87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1181DBA67F500CE6772 /* RETableView.m */; };
+		87A5F11C1DBA67F500CE6772 /* RETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F11A1DBA67F500CE6772 /* RETableViewCell.m */; };
+		87A5F11F1DBA681A00CE6772 /* REAppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F11E1DBA681A00CE6772 /* REAppInfoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +38,8 @@
 		877EF9271DB9B08300D83C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877EF93E1DB9B77500D83C27 /* REAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppDelegate.h; sourceTree = "<group>"; };
 		877EF93F1DB9B77500D83C27 /* REAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppDelegate.m; sourceTree = "<group>"; };
-		877EF9411DB9B77500D83C27 /* REViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REViewController.h; sourceTree = "<group>"; };
-		877EF9421DB9B77500D83C27 /* REViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REViewController.m; sourceTree = "<group>"; };
+		877EF9411DB9B77500D83C27 /* REAppListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppListController.h; sourceTree = "<group>"; };
+		877EF9421DB9B77500D83C27 /* REAppListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppListController.m; sourceTree = "<group>"; };
 		877EF9461DB9B77500D83C27 /* RuntimeInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeInvoker.h; sourceTree = "<group>"; };
 		877EF9471DB9B77500D83C27 /* RuntimeInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeInvoker.m; sourceTree = "<group>"; };
 		877EF94C1DB9B7AE00D83C27 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -68,18 +70,22 @@
 		877EF9681DB9B8E300D83C27 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		877EF9691DB9B8E300D83C27 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		877EF9741DB9B8F600D83C27 /* REPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPrefixHeader.pch; sourceTree = "<group>"; };
-		877EF9751DB9B94E00D83C27 /* RETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCell.h; sourceTree = "<group>"; };
-		877EF9761DB9B94E00D83C27 /* RETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewCell.m; sourceTree = "<group>"; };
 		877EF9791DB9B9CD00D83C27 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		877EF97A1DB9B9CD00D83C27 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		877EF97B1DB9B9CD00D83C27 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
-		877EF97D1DB9BA1900D83C27 /* RETableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableView.h; sourceTree = "<group>"; };
-		877EF97E1DB9BA1900D83C27 /* RETableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableView.m; sourceTree = "<group>"; };
-		877EF9841DB9BE7000D83C27 /* REInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoController.h; sourceTree = "<group>"; };
-		877EF9851DB9BE7000D83C27 /* REInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoController.m; sourceTree = "<group>"; };
+		877EF9841DB9BE7000D83C27 /* REAppInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppInfoController.h; sourceTree = "<group>"; };
+		877EF9851DB9BE7000D83C27 /* REAppInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppInfoController.m; sourceTree = "<group>"; };
 		877EF9871DB9BECE00D83C27 /* REDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
 		87A5F10F1DBA1A6C00CE6772 /* REWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWorkspace.h; sourceTree = "<group>"; };
 		87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWorkspace.m; sourceTree = "<group>"; };
+		87A5F1131DBA667B00CE6772 /* REAppListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppListCell.h; sourceTree = "<group>"; };
+		87A5F1141DBA667B00CE6772 /* REAppListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppListCell.m; sourceTree = "<group>"; };
+		87A5F1171DBA67F500CE6772 /* RETableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableView.h; sourceTree = "<group>"; };
+		87A5F1181DBA67F500CE6772 /* RETableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableView.m; sourceTree = "<group>"; };
+		87A5F1191DBA67F500CE6772 /* RETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCell.h; sourceTree = "<group>"; };
+		87A5F11A1DBA67F500CE6772 /* RETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewCell.m; sourceTree = "<group>"; };
+		87A5F11D1DBA681A00CE6772 /* REAppInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppInfoCell.h; sourceTree = "<group>"; };
+		87A5F11E1DBA681A00CE6772 /* REAppInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppInfoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,10 +168,10 @@
 		877EF9401DB9B77500D83C27 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				877EF9411DB9B77500D83C27 /* REViewController.h */,
-				877EF9421DB9B77500D83C27 /* REViewController.m */,
-				877EF9841DB9BE7000D83C27 /* REInfoController.h */,
-				877EF9851DB9BE7000D83C27 /* REInfoController.m */,
+				877EF9411DB9B77500D83C27 /* REAppListController.h */,
+				877EF9421DB9B77500D83C27 /* REAppListController.m */,
+				877EF9841DB9BE7000D83C27 /* REAppInfoController.h */,
+				877EF9851DB9BE7000D83C27 /* REAppInfoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,10 +208,11 @@
 		877EF9481DB9B77500D83C27 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				877EF97D1DB9BA1900D83C27 /* RETableView.h */,
-				877EF97E1DB9BA1900D83C27 /* RETableView.m */,
-				877EF9751DB9B94E00D83C27 /* RETableViewCell.h */,
-				877EF9761DB9B94E00D83C27 /* RETableViewCell.m */,
+				87A5F1161DBA67F500CE6772 /* Base */,
+				87A5F1131DBA667B00CE6772 /* REAppListCell.h */,
+				87A5F1141DBA667B00CE6772 /* REAppListCell.m */,
+				87A5F11D1DBA681A00CE6772 /* REAppInfoCell.h */,
+				87A5F11E1DBA681A00CE6772 /* REAppInfoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +257,17 @@
 				877EF97B1DB9B9CD00D83C27 /* metamacros.h */,
 			);
 			path = libextobjc;
+			sourceTree = "<group>";
+		};
+		87A5F1161DBA67F500CE6772 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				87A5F1171DBA67F500CE6772 /* RETableView.h */,
+				87A5F1181DBA67F500CE6772 /* RETableView.m */,
+				87A5F1191DBA67F500CE6772 /* RETableViewCell.h */,
+				87A5F11A1DBA67F500CE6772 /* RETableViewCell.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,22 +343,24 @@
 			files = (
 				877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */,
 				877EF96C1DB9B8E300D83C27 /* MASConstraintMaker.m in Sources */,
-				877EF9861DB9BE7000D83C27 /* REInfoController.m in Sources */,
+				877EF9861DB9BE7000D83C27 /* REAppInfoController.m in Sources */,
+				87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */,
 				877EF9181DB9B08300D83C27 /* main.m in Sources */,
 				877EF94B1DB9B77500D83C27 /* RuntimeInvoker.m in Sources */,
 				877EF96B1DB9B8E300D83C27 /* MASConstraint.m in Sources */,
+				87A5F1151DBA667B00CE6772 /* REAppListCell.m in Sources */,
 				877EF9731DB9B8E300D83C27 /* ViewController+MASAdditions.m in Sources */,
-				877EF9771DB9B94E00D83C27 /* RETableViewCell.m in Sources */,
 				877EF96D1DB9B8E300D83C27 /* MASLayoutConstraint.m in Sources */,
+				87A5F11C1DBA67F500CE6772 /* RETableViewCell.m in Sources */,
 				877EF9701DB9B8E300D83C27 /* NSArray+MASAdditions.m in Sources */,
 				877EF96F1DB9B8E300D83C27 /* MASViewConstraint.m in Sources */,
 				877EF96E1DB9B8E300D83C27 /* MASViewAttribute.m in Sources */,
-				877EF97F1DB9BA1900D83C27 /* RETableView.m in Sources */,
 				87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */,
 				877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */,
 				877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */,
-				877EF94A1DB9B77500D83C27 /* REViewController.m in Sources */,
+				877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */,
 				877EF96A1DB9B8E300D83C27 /* MASCompositeConstraint.m in Sources */,
+				87A5F11F1DBA681A00CE6772 /* REAppInfoCell.m in Sources */,
 				877EF9711DB9B8E300D83C27 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
