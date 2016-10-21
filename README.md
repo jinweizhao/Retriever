@@ -22,6 +22,9 @@ Retrive InfoPlist file without Jailbreak on iOS Devices
 1. [`iOS-Runtime-Headers`](https://github.com/nst/iOS-Runtime-Headers/)
 2. [`RuntimeInvoker`](https://github.com/cyanzhong/RuntimeInvoker)
 
+# License
+[`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
+
 # Contacts
 [![Weibo](https://img.shields.io/badge/weibo-%20@StackOverflowError%20-red.svg)](http://weibo.com/0x00eeee/)
 [![Twitter](https://img.shields.io/badge/twitter-@cyanapps-green.svg)](https://twitter.com/cyanapps)
