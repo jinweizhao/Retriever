@@ -22,4 +22,8 @@
     return [[self defaultWorkspace] invoke:@"installedPlugins"];
 }
 
++ (NSString *)displayNameForApplication:(id)app {
+    return [([app valueForKeyPath:kREDisplayNameKeyPath] ?: [app valueForKey:kRELocalizedShortNameKey]) description];
+}
+
 @end

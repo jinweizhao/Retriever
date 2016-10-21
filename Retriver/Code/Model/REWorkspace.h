@@ -14,4 +14,6 @@
 
 + (NSArray *)installedPlugins;
 
++ (NSString *)displayNameForApplication:(id)app;
+
 @end

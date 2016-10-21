@@ -53,16 +53,22 @@ typedef NS_ENUM(NSInteger, REListType) {
 }
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
+    NSArray *data;
     switch (sender.selectedSegmentIndex) {
         case REListTypeApp:
-            self.apps = [REWorkspace installedApplications];
+            data = [REWorkspace installedApplications];
             break;
         case REListTypePlugin:
-            self.apps = [REWorkspace installedPlugins];
+            data = [REWorkspace installedPlugins];
             break;
         default:
             break;
     }
+    self.apps = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSString *name1 = [REWorkspace displayNameForApplication:obj1];
+        NSString *name2 = [REWorkspace displayNameForApplication:obj2];
+        return [name1 compare:name2];
+    }];
     [self.tableView reloadData];
 }
 
