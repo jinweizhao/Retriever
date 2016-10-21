@@ -42,7 +42,7 @@
 
 - (NSString *)displayNameAtIndexPath:(NSIndexPath *)indexPath {
     id app = self.apps[indexPath.row];
-    return [app valueForKeyPath:kREDisplayNameKeyPath] ?: [app valueForKey:kRELocalizedShortNameKey];
+    return [([app valueForKeyPath:kREDisplayNameKeyPath] ?: [app valueForKey:kRELocalizedShortNameKey]) description];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

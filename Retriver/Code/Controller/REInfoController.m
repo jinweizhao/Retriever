@@ -154,9 +154,9 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 - (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
     [self fetchInfoWithIndexPath:indexPath completionHandler:^(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        if (subtitle.length > 0) {
+        if (isNotBlankText(subtitle)) {
             pasteboard.string = subtitle;
-        } else if (title.length > 0) {
+        } else if (isNotBlankText(title)) {
             pasteboard.string = title;
         }
     }];
