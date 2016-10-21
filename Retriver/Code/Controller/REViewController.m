@@ -58,7 +58,7 @@
     id app = self.apps[indexPath.row];
     cell.imageView.image = [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
                                  arguments:@[[app valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
-    cell.imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.);
+    cell.imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = [self displayNameAtIndexPath:indexPath];
     return cell;
