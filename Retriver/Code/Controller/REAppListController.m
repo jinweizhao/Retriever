@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, REListType) {
     UISearchResultsUpdating
 >
 
-@property (nonatomic, strong) NSArray *apps;
+@property (nonatomic, strong) NSArray *list;
 @property (nonatomic, strong) NSArray *filtered;
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) RETableView *tableView;
@@ -85,12 +85,12 @@ typedef NS_ENUM(NSInteger, REListType) {
         default: break;
     }
     
-    self.apps = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+    self.list = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSString *name1 = [REWorkspace displayNameForApplication:obj1];
         NSString *name2 = [REWorkspace displayNameForApplication:obj2];
         return [name1 compare:name2];
     }];
-    self.filtered = self.apps;
+    self.filtered = self.list;
     
     [self.tableView reloadData];
 }
@@ -124,15 +124,15 @@ typedef NS_ENUM(NSInteger, REListType) {
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     NSString *searchText = searchController.searchBar.text.lowercaseString;
     if (isBlankText(searchText)) {
-        self.filtered = self.apps;
+        self.filtered = self.list;
         [self.tableView reloadData];
     } else {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             NSMutableArray *filtered = [NSMutableArray array];
-            for (id app in self.apps) {
-                NSString *name = [REWorkspace displayNameForApplication:app];
-                if ([name.lowercaseString containsString:searchController.searchBar.text.lowercaseString]) {
-                    [filtered addObject:app];
+            for (id item in self.list) {
+                NSString *name = [REWorkspace displayNameForApplication:item];
+                if ([name.lowercaseString containsString:searchText]) {
+                    [filtered addObject:item];
                 }
             }
             self.filtered = filtered;
