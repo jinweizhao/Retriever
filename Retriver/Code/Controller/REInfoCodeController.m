@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = color(0xF8F8F8);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self
                                                                                            action:@selector(done:)];
@@ -72,6 +72,8 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
     configuration.userContentController = contentController;
 
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
+    self.webView.backgroundColor = self.view.backgroundColor;
+    self.webView.scrollView.backgroundColor = self.webView.backgroundColor;
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
