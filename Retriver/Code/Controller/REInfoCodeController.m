@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "REInfoTreeController.h"
+#import "REAppInfoBar.h"
 
 typedef NS_ENUM(NSInteger, REInfoCodeType) {
     REInfoCodeTypeJSON      = 0,
@@ -30,6 +31,7 @@ typedef JSValue XMLBeautifier;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) XMLBeautifier *beautifier;
 @property (nonatomic, assign) REInfoCodeType selectedType;
+@property (nonatomic, strong) REAppInfoBar *infoBar;
 
 @end
 
@@ -65,10 +67,25 @@ typedef JSValue XMLBeautifier;
     self.webView = [[WKWebView alloc] init];
     self.webView.backgroundColor = self.view.backgroundColor;
     self.webView.scrollView.backgroundColor = self.webView.backgroundColor;
+    self.webView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, kREAppInfoBarHeight, 0);
+    self.webView.scrollView.scrollIndicatorInsets = _webView.scrollView.contentInset;
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    self.infoBar = [[REAppInfoBar alloc] initWithInfo:self.info];
+    [self.view addSubview:self.infoBar];
+    [self.infoBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(0);
+        make.height.equalTo(kREAppInfoBarHeight);
+    }];
+    
+    @weakify(self)
+    self.infoBar.openHandler = ^{
+        @strongify(self)
+        [REHelper openApplication:self.info];
+    };
     
     [self refresh];
 }

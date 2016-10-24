@@ -19,10 +19,9 @@
 }
 
 - (void)render:(id)data {
-    id bundle = [data invoke:@"containingBundle"] ?: data;
-    self.imageView.image = [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
-                                 arguments:@[[bundle valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
-    self.textLabel.text = [REHelper displayNameForApplication:data];
+    id app = [data invoke:@"containingBundle"] ?: data;
+    self.imageView.image = [REHelper iconImageForApplication:app];
+    self.textLabel.text = [REHelper displayNameForApplication:app];
 }
 
 @end

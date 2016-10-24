@@ -16,6 +16,10 @@
 
 + (NSString *)displayNameForApplication:(id)app;
 
++ (UIImage *)iconImageForApplication:(id)app;
+
++ (void)openApplication:(id)app;
+
 + (void)openGitHub;
 
 + (void)shareRetriver;

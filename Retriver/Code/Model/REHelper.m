@@ -28,6 +28,20 @@ static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/ret
     return [([app valueForKeyPath:kREDisplayNameKeyPath] ?: [app valueForKey:kRELocalizedShortNameKey]) description];
 }
 
++ (NSString *)bundleIdentifierForApplication:(id)app {
+    return [app valueForKey:@"bundleIdentifier"];
+}
+
++ (UIImage *)iconImageForApplication:(id)app {
+    return [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
+                 arguments:@[[self bundleIdentifierForApplication:app], @(10), @([UIScreen mainScreen].scale)]];
+}
+
++ (void)openApplication:(id)app {
+    [[self defaultWorkspace] invoke:@"openApplicationWithBundleID:"
+                               args:[self bundleIdentifierForApplication:app], nil];
+}
+
 + (void)openGitHub {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kRERetriverGitHubURL]
                                        options:@{}
