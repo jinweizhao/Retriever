@@ -123,4 +123,4 @@ vkbeautify.prototype.xml = function(text, step) {
     return (str[0] == '\n') ? str.slice(1) : str;
 }
 
-var parser = new vkbeautify();
+var beautifier = new vkbeautify();

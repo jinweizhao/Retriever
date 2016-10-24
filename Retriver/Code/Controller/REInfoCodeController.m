@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
     REInfoCodeTypeXML
 };
 
+typedef JSValue XMLBeautifier;
+
 @interface REInfoCodeController ()
 
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
@@ -22,7 +24,7 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
 @property (nonatomic, copy) NSString *json;
 @property (nonatomic, copy) NSString *xml;
 @property (nonatomic, strong) WKWebView *webView;
-@property (nonatomic, strong) JSValue *parser;
+@property (nonatomic, strong) XMLBeautifier *beautifier;
 
 @end
 
@@ -125,7 +127,7 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
                                                                  options:0
                                                                    error:nil];
         NSArray *arguments = @[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding], @(2)];
-        NSString *pretty = [[self.parser callWithArguments:arguments] toString];
+        NSString *pretty = [[self.beautifier callWithArguments:arguments] toString];
         NSMutableString *xml = pretty.mutableCopy;
         [xml replaceOccurrencesOfString:@"<" withString:@"&lt;" options:0 range:NSMakeRange(0, xml.length)];
         [xml replaceOccurrencesOfString:@">" withString:@"&gt;" options:0 range:NSMakeRange(0, xml.length)];
@@ -134,16 +136,16 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
     return _xml;
 }
 
-- (JSValue *)parser {
-    if (_parser == nil) {
+- (JSValue *)beautifier {
+    if (_beautifier == nil) {
         JSContext *context = [[JSContext alloc] init];
         NSString *script = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vkbeautify" ofType:@"js"]
                                                      encoding:NSUTF8StringEncoding
                                                         error:nil];
         [context evaluateScript:script];
-        _parser = context[@"parser"][@"xml"];
+        _beautifier = context[@"beautifier"][@"xml"];
     }
-    return _parser;
+    return _beautifier;
 }
 
 @end
