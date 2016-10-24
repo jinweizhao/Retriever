@@ -25,7 +25,90 @@
 		877EF9731DB9B8E300D83C27 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9691DB9B8E300D83C27 /* ViewController+MASAdditions.m */; };
 		877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97A1DB9B9CD00D83C27 /* EXTScope.m */; };
 		877EF9861DB9BE7000D83C27 /* REAppInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REAppInfoController.m */; };
-		87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */; };
+		8787A4771DBDA4E60059E916 /* REInfoCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A4761DBDA4E60059E916 /* REInfoCodeController.m */; };
+		8787A4D01DBDACE90059E916 /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47A1DBDACE90059E916 /* highlight.pack.js */; };
+		8787A4D11DBDACE90059E916 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47B1DBDACE90059E916 /* LICENSE */; };
+		8787A4D41DBDACE90059E916 /* agate.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47F1DBDACE90059E916 /* agate.css */; };
+		8787A4D51DBDACE90059E916 /* androidstudio.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4801DBDACE90059E916 /* androidstudio.css */; };
+		8787A4D61DBDACE90059E916 /* arduino-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4811DBDACE90059E916 /* arduino-light.css */; };
+		8787A4D71DBDACE90059E916 /* arta.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4821DBDACE90059E916 /* arta.css */; };
+		8787A4D81DBDACE90059E916 /* ascetic.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4831DBDACE90059E916 /* ascetic.css */; };
+		8787A4D91DBDACE90059E916 /* atelier-cave-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4841DBDACE90059E916 /* atelier-cave-dark.css */; };
+		8787A4DA1DBDACE90059E916 /* atelier-cave-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4851DBDACE90059E916 /* atelier-cave-light.css */; };
+		8787A4DB1DBDACE90059E916 /* atelier-dune-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4861DBDACE90059E916 /* atelier-dune-dark.css */; };
+		8787A4DC1DBDACE90059E916 /* atelier-dune-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4871DBDACE90059E916 /* atelier-dune-light.css */; };
+		8787A4DD1DBDACE90059E916 /* atelier-estuary-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4881DBDACE90059E916 /* atelier-estuary-dark.css */; };
+		8787A4DE1DBDACE90059E916 /* atelier-estuary-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4891DBDACE90059E916 /* atelier-estuary-light.css */; };
+		8787A4DF1DBDACE90059E916 /* atelier-forest-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48A1DBDACE90059E916 /* atelier-forest-dark.css */; };
+		8787A4E01DBDACE90059E916 /* atelier-forest-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48B1DBDACE90059E916 /* atelier-forest-light.css */; };
+		8787A4E11DBDACE90059E916 /* atelier-heath-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48C1DBDACE90059E916 /* atelier-heath-dark.css */; };
+		8787A4E21DBDACE90059E916 /* atelier-heath-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48D1DBDACE90059E916 /* atelier-heath-light.css */; };
+		8787A4E31DBDACE90059E916 /* atelier-lakeside-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48E1DBDACE90059E916 /* atelier-lakeside-dark.css */; };
+		8787A4E41DBDACE90059E916 /* atelier-lakeside-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A48F1DBDACE90059E916 /* atelier-lakeside-light.css */; };
+		8787A4E51DBDACE90059E916 /* atelier-plateau-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4901DBDACE90059E916 /* atelier-plateau-dark.css */; };
+		8787A4E61DBDACE90059E916 /* atelier-plateau-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4911DBDACE90059E916 /* atelier-plateau-light.css */; };
+		8787A4E71DBDACE90059E916 /* atelier-savanna-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4921DBDACE90059E916 /* atelier-savanna-dark.css */; };
+		8787A4E81DBDACE90059E916 /* atelier-savanna-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4931DBDACE90059E916 /* atelier-savanna-light.css */; };
+		8787A4E91DBDACE90059E916 /* atelier-seaside-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4941DBDACE90059E916 /* atelier-seaside-dark.css */; };
+		8787A4EA1DBDACE90059E916 /* atelier-seaside-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4951DBDACE90059E916 /* atelier-seaside-light.css */; };
+		8787A4EB1DBDACE90059E916 /* atelier-sulphurpool-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4961DBDACE90059E916 /* atelier-sulphurpool-dark.css */; };
+		8787A4EC1DBDACE90059E916 /* atelier-sulphurpool-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4971DBDACE90059E916 /* atelier-sulphurpool-light.css */; };
+		8787A4ED1DBDACE90059E916 /* atom-one-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4981DBDACE90059E916 /* atom-one-dark.css */; };
+		8787A4EE1DBDACE90059E916 /* atom-one-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4991DBDACE90059E916 /* atom-one-light.css */; };
+		8787A4EF1DBDACE90059E916 /* brown-paper.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49A1DBDACE90059E916 /* brown-paper.css */; };
+		8787A4F01DBDACE90059E916 /* brown-papersq.png in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49B1DBDACE90059E916 /* brown-papersq.png */; };
+		8787A4F11DBDACE90059E916 /* codepen-embed.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49C1DBDACE90059E916 /* codepen-embed.css */; };
+		8787A4F21DBDACE90059E916 /* color-brewer.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49D1DBDACE90059E916 /* color-brewer.css */; };
+		8787A4F31DBDACE90059E916 /* darcula.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49E1DBDACE90059E916 /* darcula.css */; };
+		8787A4F41DBDACE90059E916 /* dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A49F1DBDACE90059E916 /* dark.css */; };
+		8787A4F51DBDACE90059E916 /* darkula.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A01DBDACE90059E916 /* darkula.css */; };
+		8787A4F61DBDACE90059E916 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A11DBDACE90059E916 /* default.css */; };
+		8787A4F71DBDACE90059E916 /* docco.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A21DBDACE90059E916 /* docco.css */; };
+		8787A4F81DBDACE90059E916 /* dracula.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A31DBDACE90059E916 /* dracula.css */; };
+		8787A4F91DBDACE90059E916 /* far.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A41DBDACE90059E916 /* far.css */; };
+		8787A4FA1DBDACE90059E916 /* foundation.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A51DBDACE90059E916 /* foundation.css */; };
+		8787A4FB1DBDACE90059E916 /* github-gist.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A61DBDACE90059E916 /* github-gist.css */; };
+		8787A4FC1DBDACE90059E916 /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A71DBDACE90059E916 /* github.css */; };
+		8787A4FD1DBDACE90059E916 /* googlecode.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A81DBDACE90059E916 /* googlecode.css */; };
+		8787A4FE1DBDACE90059E916 /* grayscale.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4A91DBDACE90059E916 /* grayscale.css */; };
+		8787A4FF1DBDACE90059E916 /* gruvbox-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AA1DBDACE90059E916 /* gruvbox-dark.css */; };
+		8787A5001DBDACE90059E916 /* gruvbox-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AB1DBDACE90059E916 /* gruvbox-light.css */; };
+		8787A5011DBDACE90059E916 /* hopscotch.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AC1DBDACE90059E916 /* hopscotch.css */; };
+		8787A5021DBDACE90059E916 /* hybrid.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AD1DBDACE90059E916 /* hybrid.css */; };
+		8787A5031DBDACE90059E916 /* idea.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AE1DBDACE90059E916 /* idea.css */; };
+		8787A5041DBDACE90059E916 /* ir-black.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4AF1DBDACE90059E916 /* ir-black.css */; };
+		8787A5051DBDACE90059E916 /* kimbie.dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B01DBDACE90059E916 /* kimbie.dark.css */; };
+		8787A5061DBDACE90059E916 /* kimbie.light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B11DBDACE90059E916 /* kimbie.light.css */; };
+		8787A5071DBDACE90059E916 /* magula.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B21DBDACE90059E916 /* magula.css */; };
+		8787A5081DBDACE90059E916 /* mono-blue.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B31DBDACE90059E916 /* mono-blue.css */; };
+		8787A5091DBDACE90059E916 /* monokai-sublime.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B41DBDACE90059E916 /* monokai-sublime.css */; };
+		8787A50A1DBDACE90059E916 /* monokai.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B51DBDACE90059E916 /* monokai.css */; };
+		8787A50B1DBDACE90059E916 /* obsidian.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B61DBDACE90059E916 /* obsidian.css */; };
+		8787A50C1DBDACE90059E916 /* ocean.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B71DBDACE90059E916 /* ocean.css */; };
+		8787A50D1DBDACE90059E916 /* paraiso-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B81DBDACE90059E916 /* paraiso-dark.css */; };
+		8787A50E1DBDACE90059E916 /* paraiso-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4B91DBDACE90059E916 /* paraiso-light.css */; };
+		8787A50F1DBDACE90059E916 /* pojoaque.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BA1DBDACE90059E916 /* pojoaque.css */; };
+		8787A5101DBDACE90059E916 /* pojoaque.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BB1DBDACE90059E916 /* pojoaque.jpg */; };
+		8787A5111DBDACE90059E916 /* purebasic.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BC1DBDACE90059E916 /* purebasic.css */; };
+		8787A5121DBDACE90059E916 /* qtcreator_dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BD1DBDACE90059E916 /* qtcreator_dark.css */; };
+		8787A5131DBDACE90059E916 /* qtcreator_light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BE1DBDACE90059E916 /* qtcreator_light.css */; };
+		8787A5141DBDACE90059E916 /* railscasts.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4BF1DBDACE90059E916 /* railscasts.css */; };
+		8787A5151DBDACE90059E916 /* rainbow.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C01DBDACE90059E916 /* rainbow.css */; };
+		8787A5161DBDACE90059E916 /* school-book.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C11DBDACE90059E916 /* school-book.css */; };
+		8787A5171DBDACE90059E916 /* school-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C21DBDACE90059E916 /* school-book.png */; };
+		8787A5181DBDACE90059E916 /* solarized-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C31DBDACE90059E916 /* solarized-dark.css */; };
+		8787A5191DBDACE90059E916 /* solarized-light.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C41DBDACE90059E916 /* solarized-light.css */; };
+		8787A51A1DBDACE90059E916 /* sunburst.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C51DBDACE90059E916 /* sunburst.css */; };
+		8787A51B1DBDACE90059E916 /* tomorrow-night-blue.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C61DBDACE90059E916 /* tomorrow-night-blue.css */; };
+		8787A51C1DBDACE90059E916 /* tomorrow-night-bright.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C71DBDACE90059E916 /* tomorrow-night-bright.css */; };
+		8787A51D1DBDACE90059E916 /* tomorrow-night-eighties.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C81DBDACE90059E916 /* tomorrow-night-eighties.css */; };
+		8787A51E1DBDACE90059E916 /* tomorrow-night.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4C91DBDACE90059E916 /* tomorrow-night.css */; };
+		8787A51F1DBDACE90059E916 /* tomorrow.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CA1DBDACE90059E916 /* tomorrow.css */; };
+		8787A5201DBDACE90059E916 /* vs.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CB1DBDACE90059E916 /* vs.css */; };
+		8787A5211DBDACE90059E916 /* xcode.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CC1DBDACE90059E916 /* xcode.css */; };
+		8787A5221DBDACE90059E916 /* xt256.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CD1DBDACE90059E916 /* xt256.css */; };
+		8787A5231DBDACE90059E916 /* zenburn.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CE1DBDACE90059E916 /* zenburn.css */; };
+		87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REHelper.m */; };
 		87A5F1151DBA667B00CE6772 /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1141DBA667B00CE6772 /* REAppListCell.m */; };
 		87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1181DBA67F500CE6772 /* RETableView.m */; };
 		87A5F11C1DBA67F500CE6772 /* RETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F11A1DBA67F500CE6772 /* RETableViewCell.m */; };
@@ -76,8 +159,95 @@
 		877EF9841DB9BE7000D83C27 /* REAppInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppInfoController.h; sourceTree = "<group>"; };
 		877EF9851DB9BE7000D83C27 /* REAppInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppInfoController.m; sourceTree = "<group>"; };
 		877EF9871DB9BECE00D83C27 /* REDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
-		87A5F10F1DBA1A6C00CE6772 /* REWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWorkspace.h; sourceTree = "<group>"; };
-		87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWorkspace.m; sourceTree = "<group>"; };
+		8787A4751DBDA4E60059E916 /* REInfoCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoCodeController.h; sourceTree = "<group>"; };
+		8787A4761DBDA4E60059E916 /* REInfoCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoCodeController.m; sourceTree = "<group>"; };
+		8787A4791DBDACE90059E916 /* CHANGES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGES.md; sourceTree = "<group>"; };
+		8787A47A1DBDACE90059E916 /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.pack.js; sourceTree = "<group>"; };
+		8787A47B1DBDACE90059E916 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8787A47C1DBDACE90059E916 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8787A47D1DBDACE90059E916 /* README.ru.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.ru.md; sourceTree = "<group>"; };
+		8787A47F1DBDACE90059E916 /* agate.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = agate.css; sourceTree = "<group>"; };
+		8787A4801DBDACE90059E916 /* androidstudio.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = androidstudio.css; sourceTree = "<group>"; };
+		8787A4811DBDACE90059E916 /* arduino-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "arduino-light.css"; sourceTree = "<group>"; };
+		8787A4821DBDACE90059E916 /* arta.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = arta.css; sourceTree = "<group>"; };
+		8787A4831DBDACE90059E916 /* ascetic.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ascetic.css; sourceTree = "<group>"; };
+		8787A4841DBDACE90059E916 /* atelier-cave-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-dark.css"; sourceTree = "<group>"; };
+		8787A4851DBDACE90059E916 /* atelier-cave-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-light.css"; sourceTree = "<group>"; };
+		8787A4861DBDACE90059E916 /* atelier-dune-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-dark.css"; sourceTree = "<group>"; };
+		8787A4871DBDACE90059E916 /* atelier-dune-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-light.css"; sourceTree = "<group>"; };
+		8787A4881DBDACE90059E916 /* atelier-estuary-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-dark.css"; sourceTree = "<group>"; };
+		8787A4891DBDACE90059E916 /* atelier-estuary-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-light.css"; sourceTree = "<group>"; };
+		8787A48A1DBDACE90059E916 /* atelier-forest-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-dark.css"; sourceTree = "<group>"; };
+		8787A48B1DBDACE90059E916 /* atelier-forest-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-light.css"; sourceTree = "<group>"; };
+		8787A48C1DBDACE90059E916 /* atelier-heath-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-dark.css"; sourceTree = "<group>"; };
+		8787A48D1DBDACE90059E916 /* atelier-heath-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-light.css"; sourceTree = "<group>"; };
+		8787A48E1DBDACE90059E916 /* atelier-lakeside-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-dark.css"; sourceTree = "<group>"; };
+		8787A48F1DBDACE90059E916 /* atelier-lakeside-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-light.css"; sourceTree = "<group>"; };
+		8787A4901DBDACE90059E916 /* atelier-plateau-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-dark.css"; sourceTree = "<group>"; };
+		8787A4911DBDACE90059E916 /* atelier-plateau-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-light.css"; sourceTree = "<group>"; };
+		8787A4921DBDACE90059E916 /* atelier-savanna-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.css"; sourceTree = "<group>"; };
+		8787A4931DBDACE90059E916 /* atelier-savanna-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-light.css"; sourceTree = "<group>"; };
+		8787A4941DBDACE90059E916 /* atelier-seaside-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-dark.css"; sourceTree = "<group>"; };
+		8787A4951DBDACE90059E916 /* atelier-seaside-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-light.css"; sourceTree = "<group>"; };
+		8787A4961DBDACE90059E916 /* atelier-sulphurpool-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-dark.css"; sourceTree = "<group>"; };
+		8787A4971DBDACE90059E916 /* atelier-sulphurpool-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.css"; sourceTree = "<group>"; };
+		8787A4981DBDACE90059E916 /* atom-one-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-dark.css"; sourceTree = "<group>"; };
+		8787A4991DBDACE90059E916 /* atom-one-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-light.css"; sourceTree = "<group>"; };
+		8787A49A1DBDACE90059E916 /* brown-paper.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "brown-paper.css"; sourceTree = "<group>"; };
+		8787A49B1DBDACE90059E916 /* brown-papersq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brown-papersq.png"; sourceTree = "<group>"; };
+		8787A49C1DBDACE90059E916 /* codepen-embed.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "codepen-embed.css"; sourceTree = "<group>"; };
+		8787A49D1DBDACE90059E916 /* color-brewer.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.css"; sourceTree = "<group>"; };
+		8787A49E1DBDACE90059E916 /* darcula.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darcula.css; sourceTree = "<group>"; };
+		8787A49F1DBDACE90059E916 /* dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.css; sourceTree = "<group>"; };
+		8787A4A01DBDACE90059E916 /* darkula.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkula.css; sourceTree = "<group>"; };
+		8787A4A11DBDACE90059E916 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.css; sourceTree = "<group>"; };
+		8787A4A21DBDACE90059E916 /* docco.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = docco.css; sourceTree = "<group>"; };
+		8787A4A31DBDACE90059E916 /* dracula.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dracula.css; sourceTree = "<group>"; };
+		8787A4A41DBDACE90059E916 /* far.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = far.css; sourceTree = "<group>"; };
+		8787A4A51DBDACE90059E916 /* foundation.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = foundation.css; sourceTree = "<group>"; };
+		8787A4A61DBDACE90059E916 /* github-gist.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-gist.css"; sourceTree = "<group>"; };
+		8787A4A71DBDACE90059E916 /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		8787A4A81DBDACE90059E916 /* googlecode.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = googlecode.css; sourceTree = "<group>"; };
+		8787A4A91DBDACE90059E916 /* grayscale.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = grayscale.css; sourceTree = "<group>"; };
+		8787A4AA1DBDACE90059E916 /* gruvbox-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-dark.css"; sourceTree = "<group>"; };
+		8787A4AB1DBDACE90059E916 /* gruvbox-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-light.css"; sourceTree = "<group>"; };
+		8787A4AC1DBDACE90059E916 /* hopscotch.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hopscotch.css; sourceTree = "<group>"; };
+		8787A4AD1DBDACE90059E916 /* hybrid.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hybrid.css; sourceTree = "<group>"; };
+		8787A4AE1DBDACE90059E916 /* idea.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = idea.css; sourceTree = "<group>"; };
+		8787A4AF1DBDACE90059E916 /* ir-black.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "ir-black.css"; sourceTree = "<group>"; };
+		8787A4B01DBDACE90059E916 /* kimbie.dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.dark.css; sourceTree = "<group>"; };
+		8787A4B11DBDACE90059E916 /* kimbie.light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.light.css; sourceTree = "<group>"; };
+		8787A4B21DBDACE90059E916 /* magula.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = magula.css; sourceTree = "<group>"; };
+		8787A4B31DBDACE90059E916 /* mono-blue.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "mono-blue.css"; sourceTree = "<group>"; };
+		8787A4B41DBDACE90059E916 /* monokai-sublime.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "monokai-sublime.css"; sourceTree = "<group>"; };
+		8787A4B51DBDACE90059E916 /* monokai.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = monokai.css; sourceTree = "<group>"; };
+		8787A4B61DBDACE90059E916 /* obsidian.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = obsidian.css; sourceTree = "<group>"; };
+		8787A4B71DBDACE90059E916 /* ocean.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ocean.css; sourceTree = "<group>"; };
+		8787A4B81DBDACE90059E916 /* paraiso-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.css"; sourceTree = "<group>"; };
+		8787A4B91DBDACE90059E916 /* paraiso-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-light.css"; sourceTree = "<group>"; };
+		8787A4BA1DBDACE90059E916 /* pojoaque.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = pojoaque.css; sourceTree = "<group>"; };
+		8787A4BB1DBDACE90059E916 /* pojoaque.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pojoaque.jpg; sourceTree = "<group>"; };
+		8787A4BC1DBDACE90059E916 /* purebasic.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = purebasic.css; sourceTree = "<group>"; };
+		8787A4BD1DBDACE90059E916 /* qtcreator_dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_dark.css; sourceTree = "<group>"; };
+		8787A4BE1DBDACE90059E916 /* qtcreator_light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_light.css; sourceTree = "<group>"; };
+		8787A4BF1DBDACE90059E916 /* railscasts.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = railscasts.css; sourceTree = "<group>"; };
+		8787A4C01DBDACE90059E916 /* rainbow.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rainbow.css; sourceTree = "<group>"; };
+		8787A4C11DBDACE90059E916 /* school-book.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "school-book.css"; sourceTree = "<group>"; };
+		8787A4C21DBDACE90059E916 /* school-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school-book.png"; sourceTree = "<group>"; };
+		8787A4C31DBDACE90059E916 /* solarized-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-dark.css"; sourceTree = "<group>"; };
+		8787A4C41DBDACE90059E916 /* solarized-light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-light.css"; sourceTree = "<group>"; };
+		8787A4C51DBDACE90059E916 /* sunburst.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = sunburst.css; sourceTree = "<group>"; };
+		8787A4C61DBDACE90059E916 /* tomorrow-night-blue.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-blue.css"; sourceTree = "<group>"; };
+		8787A4C71DBDACE90059E916 /* tomorrow-night-bright.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-bright.css"; sourceTree = "<group>"; };
+		8787A4C81DBDACE90059E916 /* tomorrow-night-eighties.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-eighties.css"; sourceTree = "<group>"; };
+		8787A4C91DBDACE90059E916 /* tomorrow-night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night.css"; sourceTree = "<group>"; };
+		8787A4CA1DBDACE90059E916 /* tomorrow.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = tomorrow.css; sourceTree = "<group>"; };
+		8787A4CB1DBDACE90059E916 /* vs.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs.css; sourceTree = "<group>"; };
+		8787A4CC1DBDACE90059E916 /* xcode.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.css; sourceTree = "<group>"; };
+		8787A4CD1DBDACE90059E916 /* xt256.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.css; sourceTree = "<group>"; };
+		8787A4CE1DBDACE90059E916 /* zenburn.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.css; sourceTree = "<group>"; };
+		87A5F10F1DBA1A6C00CE6772 /* REHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHelper.h; sourceTree = "<group>"; };
+		87A5F1101DBA1A6C00CE6772 /* REHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHelper.m; sourceTree = "<group>"; };
 		87A5F1131DBA667B00CE6772 /* REAppListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppListCell.h; sourceTree = "<group>"; };
 		87A5F1141DBA667B00CE6772 /* REAppListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppListCell.m; sourceTree = "<group>"; };
 		87A5F1171DBA67F500CE6772 /* RETableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableView.h; sourceTree = "<group>"; };
@@ -138,6 +308,7 @@
 		877EF9311DB9B68700D83C27 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				8787A4781DBDACE90059E916 /* highlight */,
 				877EF94C1DB9B7AE00D83C27 /* Media.xcassets */,
 				877EF94E1DB9B7C000D83C27 /* LaunchScreen.storyboard */,
 			);
@@ -172,6 +343,8 @@
 				877EF9421DB9B77500D83C27 /* REAppListController.m */,
 				877EF9841DB9BE7000D83C27 /* REAppInfoController.h */,
 				877EF9851DB9BE7000D83C27 /* REAppInfoController.m */,
+				8787A4751DBDA4E60059E916 /* REInfoCodeController.h */,
+				8787A4761DBDA4E60059E916 /* REInfoCodeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,8 +353,8 @@
 			isa = PBXGroup;
 			children = (
 				877EF9871DB9BECE00D83C27 /* REDefine.h */,
-				87A5F10F1DBA1A6C00CE6772 /* REWorkspace.h */,
-				87A5F1101DBA1A6C00CE6772 /* REWorkspace.m */,
+				87A5F10F1DBA1A6C00CE6772 /* REHelper.h */,
+				87A5F1101DBA1A6C00CE6772 /* REHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +432,106 @@
 			path = libextobjc;
 			sourceTree = "<group>";
 		};
+		8787A4781DBDACE90059E916 /* highlight */ = {
+			isa = PBXGroup;
+			children = (
+				8787A4791DBDACE90059E916 /* CHANGES.md */,
+				8787A47A1DBDACE90059E916 /* highlight.pack.js */,
+				8787A47B1DBDACE90059E916 /* LICENSE */,
+				8787A47C1DBDACE90059E916 /* README.md */,
+				8787A47D1DBDACE90059E916 /* README.ru.md */,
+				8787A47E1DBDACE90059E916 /* styles */,
+			);
+			path = highlight;
+			sourceTree = "<group>";
+		};
+		8787A47E1DBDACE90059E916 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				8787A47F1DBDACE90059E916 /* agate.css */,
+				8787A4801DBDACE90059E916 /* androidstudio.css */,
+				8787A4811DBDACE90059E916 /* arduino-light.css */,
+				8787A4821DBDACE90059E916 /* arta.css */,
+				8787A4831DBDACE90059E916 /* ascetic.css */,
+				8787A4841DBDACE90059E916 /* atelier-cave-dark.css */,
+				8787A4851DBDACE90059E916 /* atelier-cave-light.css */,
+				8787A4861DBDACE90059E916 /* atelier-dune-dark.css */,
+				8787A4871DBDACE90059E916 /* atelier-dune-light.css */,
+				8787A4881DBDACE90059E916 /* atelier-estuary-dark.css */,
+				8787A4891DBDACE90059E916 /* atelier-estuary-light.css */,
+				8787A48A1DBDACE90059E916 /* atelier-forest-dark.css */,
+				8787A48B1DBDACE90059E916 /* atelier-forest-light.css */,
+				8787A48C1DBDACE90059E916 /* atelier-heath-dark.css */,
+				8787A48D1DBDACE90059E916 /* atelier-heath-light.css */,
+				8787A48E1DBDACE90059E916 /* atelier-lakeside-dark.css */,
+				8787A48F1DBDACE90059E916 /* atelier-lakeside-light.css */,
+				8787A4901DBDACE90059E916 /* atelier-plateau-dark.css */,
+				8787A4911DBDACE90059E916 /* atelier-plateau-light.css */,
+				8787A4921DBDACE90059E916 /* atelier-savanna-dark.css */,
+				8787A4931DBDACE90059E916 /* atelier-savanna-light.css */,
+				8787A4941DBDACE90059E916 /* atelier-seaside-dark.css */,
+				8787A4951DBDACE90059E916 /* atelier-seaside-light.css */,
+				8787A4961DBDACE90059E916 /* atelier-sulphurpool-dark.css */,
+				8787A4971DBDACE90059E916 /* atelier-sulphurpool-light.css */,
+				8787A4981DBDACE90059E916 /* atom-one-dark.css */,
+				8787A4991DBDACE90059E916 /* atom-one-light.css */,
+				8787A49A1DBDACE90059E916 /* brown-paper.css */,
+				8787A49B1DBDACE90059E916 /* brown-papersq.png */,
+				8787A49C1DBDACE90059E916 /* codepen-embed.css */,
+				8787A49D1DBDACE90059E916 /* color-brewer.css */,
+				8787A49E1DBDACE90059E916 /* darcula.css */,
+				8787A49F1DBDACE90059E916 /* dark.css */,
+				8787A4A01DBDACE90059E916 /* darkula.css */,
+				8787A4A11DBDACE90059E916 /* default.css */,
+				8787A4A21DBDACE90059E916 /* docco.css */,
+				8787A4A31DBDACE90059E916 /* dracula.css */,
+				8787A4A41DBDACE90059E916 /* far.css */,
+				8787A4A51DBDACE90059E916 /* foundation.css */,
+				8787A4A61DBDACE90059E916 /* github-gist.css */,
+				8787A4A71DBDACE90059E916 /* github.css */,
+				8787A4A81DBDACE90059E916 /* googlecode.css */,
+				8787A4A91DBDACE90059E916 /* grayscale.css */,
+				8787A4AA1DBDACE90059E916 /* gruvbox-dark.css */,
+				8787A4AB1DBDACE90059E916 /* gruvbox-light.css */,
+				8787A4AC1DBDACE90059E916 /* hopscotch.css */,
+				8787A4AD1DBDACE90059E916 /* hybrid.css */,
+				8787A4AE1DBDACE90059E916 /* idea.css */,
+				8787A4AF1DBDACE90059E916 /* ir-black.css */,
+				8787A4B01DBDACE90059E916 /* kimbie.dark.css */,
+				8787A4B11DBDACE90059E916 /* kimbie.light.css */,
+				8787A4B21DBDACE90059E916 /* magula.css */,
+				8787A4B31DBDACE90059E916 /* mono-blue.css */,
+				8787A4B41DBDACE90059E916 /* monokai-sublime.css */,
+				8787A4B51DBDACE90059E916 /* monokai.css */,
+				8787A4B61DBDACE90059E916 /* obsidian.css */,
+				8787A4B71DBDACE90059E916 /* ocean.css */,
+				8787A4B81DBDACE90059E916 /* paraiso-dark.css */,
+				8787A4B91DBDACE90059E916 /* paraiso-light.css */,
+				8787A4BA1DBDACE90059E916 /* pojoaque.css */,
+				8787A4BB1DBDACE90059E916 /* pojoaque.jpg */,
+				8787A4BC1DBDACE90059E916 /* purebasic.css */,
+				8787A4BD1DBDACE90059E916 /* qtcreator_dark.css */,
+				8787A4BE1DBDACE90059E916 /* qtcreator_light.css */,
+				8787A4BF1DBDACE90059E916 /* railscasts.css */,
+				8787A4C01DBDACE90059E916 /* rainbow.css */,
+				8787A4C11DBDACE90059E916 /* school-book.css */,
+				8787A4C21DBDACE90059E916 /* school-book.png */,
+				8787A4C31DBDACE90059E916 /* solarized-dark.css */,
+				8787A4C41DBDACE90059E916 /* solarized-light.css */,
+				8787A4C51DBDACE90059E916 /* sunburst.css */,
+				8787A4C61DBDACE90059E916 /* tomorrow-night-blue.css */,
+				8787A4C71DBDACE90059E916 /* tomorrow-night-bright.css */,
+				8787A4C81DBDACE90059E916 /* tomorrow-night-eighties.css */,
+				8787A4C91DBDACE90059E916 /* tomorrow-night.css */,
+				8787A4CA1DBDACE90059E916 /* tomorrow.css */,
+				8787A4CB1DBDACE90059E916 /* vs.css */,
+				8787A4CC1DBDACE90059E916 /* xcode.css */,
+				8787A4CD1DBDACE90059E916 /* xt256.css */,
+				8787A4CE1DBDACE90059E916 /* zenburn.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
 		87A5F1161DBA67F500CE6772 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,8 +602,90 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8787A4F71DBDACE90059E916 /* docco.css in Resources */,
+				8787A4DD1DBDACE90059E916 /* atelier-estuary-dark.css in Resources */,
+				8787A4E71DBDACE90059E916 /* atelier-savanna-dark.css in Resources */,
+				8787A50D1DBDACE90059E916 /* paraiso-dark.css in Resources */,
+				8787A4EB1DBDACE90059E916 /* atelier-sulphurpool-dark.css in Resources */,
+				8787A4D41DBDACE90059E916 /* agate.css in Resources */,
+				8787A4E91DBDACE90059E916 /* atelier-seaside-dark.css in Resources */,
+				8787A5181DBDACE90059E916 /* solarized-dark.css in Resources */,
+				8787A4FC1DBDACE90059E916 /* github.css in Resources */,
+				8787A5081DBDACE90059E916 /* mono-blue.css in Resources */,
+				8787A4FD1DBDACE90059E916 /* googlecode.css in Resources */,
+				8787A5071DBDACE90059E916 /* magula.css in Resources */,
+				8787A51F1DBDACE90059E916 /* tomorrow.css in Resources */,
 				877EF94D1DB9B7AE00D83C27 /* Media.xcassets in Resources */,
+				8787A5151DBDACE90059E916 /* rainbow.css in Resources */,
+				8787A4DF1DBDACE90059E916 /* atelier-forest-dark.css in Resources */,
+				8787A4F21DBDACE90059E916 /* color-brewer.css in Resources */,
+				8787A5131DBDACE90059E916 /* qtcreator_light.css in Resources */,
+				8787A4D61DBDACE90059E916 /* arduino-light.css in Resources */,
+				8787A51C1DBDACE90059E916 /* tomorrow-night-bright.css in Resources */,
+				8787A5191DBDACE90059E916 /* solarized-light.css in Resources */,
+				8787A4E41DBDACE90059E916 /* atelier-lakeside-light.css in Resources */,
+				8787A4F31DBDACE90059E916 /* darcula.css in Resources */,
+				8787A4D91DBDACE90059E916 /* atelier-cave-dark.css in Resources */,
+				8787A4F51DBDACE90059E916 /* darkula.css in Resources */,
+				8787A4F41DBDACE90059E916 /* dark.css in Resources */,
+				8787A5231DBDACE90059E916 /* zenburn.css in Resources */,
 				877EF94F1DB9B7C000D83C27 /* LaunchScreen.storyboard in Resources */,
+				8787A4E11DBDACE90059E916 /* atelier-heath-dark.css in Resources */,
+				8787A4FF1DBDACE90059E916 /* gruvbox-dark.css in Resources */,
+				8787A50E1DBDACE90059E916 /* paraiso-light.css in Resources */,
+				8787A5171DBDACE90059E916 /* school-book.png in Resources */,
+				8787A4D51DBDACE90059E916 /* androidstudio.css in Resources */,
+				8787A4DB1DBDACE90059E916 /* atelier-dune-dark.css in Resources */,
+				8787A5031DBDACE90059E916 /* idea.css in Resources */,
+				8787A5201DBDACE90059E916 /* vs.css in Resources */,
+				8787A5101DBDACE90059E916 /* pojoaque.jpg in Resources */,
+				8787A5001DBDACE90059E916 /* gruvbox-light.css in Resources */,
+				8787A5161DBDACE90059E916 /* school-book.css in Resources */,
+				8787A4F11DBDACE90059E916 /* codepen-embed.css in Resources */,
+				8787A4DE1DBDACE90059E916 /* atelier-estuary-light.css in Resources */,
+				8787A4FB1DBDACE90059E916 /* github-gist.css in Resources */,
+				8787A4EE1DBDACE90059E916 /* atom-one-light.css in Resources */,
+				8787A4EA1DBDACE90059E916 /* atelier-seaside-light.css in Resources */,
+				8787A4F01DBDACE90059E916 /* brown-papersq.png in Resources */,
+				8787A4F61DBDACE90059E916 /* default.css in Resources */,
+				8787A4FE1DBDACE90059E916 /* grayscale.css in Resources */,
+				8787A4D11DBDACE90059E916 /* LICENSE in Resources */,
+				8787A5211DBDACE90059E916 /* xcode.css in Resources */,
+				8787A5121DBDACE90059E916 /* qtcreator_dark.css in Resources */,
+				8787A5021DBDACE90059E916 /* hybrid.css in Resources */,
+				8787A4F81DBDACE90059E916 /* dracula.css in Resources */,
+				8787A50F1DBDACE90059E916 /* pojoaque.css in Resources */,
+				8787A5041DBDACE90059E916 /* ir-black.css in Resources */,
+				8787A4F91DBDACE90059E916 /* far.css in Resources */,
+				8787A4D01DBDACE90059E916 /* highlight.pack.js in Resources */,
+				8787A50B1DBDACE90059E916 /* obsidian.css in Resources */,
+				8787A4EF1DBDACE90059E916 /* brown-paper.css in Resources */,
+				8787A4D71DBDACE90059E916 /* arta.css in Resources */,
+				8787A50A1DBDACE90059E916 /* monokai.css in Resources */,
+				8787A5091DBDACE90059E916 /* monokai-sublime.css in Resources */,
+				8787A4DC1DBDACE90059E916 /* atelier-dune-light.css in Resources */,
+				8787A51E1DBDACE90059E916 /* tomorrow-night.css in Resources */,
+				8787A5221DBDACE90059E916 /* xt256.css in Resources */,
+				8787A4EC1DBDACE90059E916 /* atelier-sulphurpool-light.css in Resources */,
+				8787A4D81DBDACE90059E916 /* ascetic.css in Resources */,
+				8787A51B1DBDACE90059E916 /* tomorrow-night-blue.css in Resources */,
+				8787A5141DBDACE90059E916 /* railscasts.css in Resources */,
+				8787A5061DBDACE90059E916 /* kimbie.light.css in Resources */,
+				8787A4E81DBDACE90059E916 /* atelier-savanna-light.css in Resources */,
+				8787A4E31DBDACE90059E916 /* atelier-lakeside-dark.css in Resources */,
+				8787A4E21DBDACE90059E916 /* atelier-heath-light.css in Resources */,
+				8787A4DA1DBDACE90059E916 /* atelier-cave-light.css in Resources */,
+				8787A4E01DBDACE90059E916 /* atelier-forest-light.css in Resources */,
+				8787A4ED1DBDACE90059E916 /* atom-one-dark.css in Resources */,
+				8787A51D1DBDACE90059E916 /* tomorrow-night-eighties.css in Resources */,
+				8787A50C1DBDACE90059E916 /* ocean.css in Resources */,
+				8787A4E51DBDACE90059E916 /* atelier-plateau-dark.css in Resources */,
+				8787A51A1DBDACE90059E916 /* sunburst.css in Resources */,
+				8787A4E61DBDACE90059E916 /* atelier-plateau-light.css in Resources */,
+				8787A5111DBDACE90059E916 /* purebasic.css in Resources */,
+				8787A4FA1DBDACE90059E916 /* foundation.css in Resources */,
+				8787A5011DBDACE90059E916 /* hopscotch.css in Resources */,
+				8787A5051DBDACE90059E916 /* kimbie.dark.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +710,12 @@
 				877EF9701DB9B8E300D83C27 /* NSArray+MASAdditions.m in Sources */,
 				877EF96F1DB9B8E300D83C27 /* MASViewConstraint.m in Sources */,
 				877EF96E1DB9B8E300D83C27 /* MASViewAttribute.m in Sources */,
-				87A5F1111DBA1A6C00CE6772 /* REWorkspace.m in Sources */,
+				87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */,
 				877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */,
 				877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */,
 				877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */,
 				877EF96A1DB9B8E300D83C27 /* MASCompositeConstraint.m in Sources */,
+				8787A4771DBDA4E60059E916 /* REInfoCodeController.m in Sources */,
 				87A5F11F1DBA681A00CE6772 /* REAppInfoCell.m in Sources */,
 				877EF9711DB9B8E300D83C27 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);

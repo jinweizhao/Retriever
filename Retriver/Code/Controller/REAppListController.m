@@ -70,8 +70,8 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)refresh {
     
-    NSArray *apps = [REWorkspace installedApplications];
-    NSArray *plugins = [REWorkspace installedPlugins];
+    NSArray *apps = [REHelper installedApplications];
+    NSArray *plugins = [REHelper installedPlugins];
     NSArray *data;
     
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
@@ -86,8 +86,8 @@ typedef NS_ENUM(NSInteger, REListType) {
     }
     
     self.list = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSString *name1 = [REWorkspace displayNameForApplication:obj1];
-        NSString *name2 = [REWorkspace displayNameForApplication:obj2];
+        NSString *name1 = [REHelper displayNameForApplication:obj1];
+        NSString *name2 = [REHelper displayNameForApplication:obj2];
         return [name1 compare:name2];
     }];
     self.filtered = self.list;
@@ -130,7 +130,7 @@ typedef NS_ENUM(NSInteger, REListType) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             NSMutableArray *filtered = [NSMutableArray array];
             for (id item in self.list) {
-                NSString *name = [REWorkspace displayNameForApplication:item];
+                NSString *name = [REHelper displayNameForApplication:item];
                 if ([name.lowercaseString containsString:searchText]) {
                     [filtered addObject:item];
                 }

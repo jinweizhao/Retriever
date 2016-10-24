@@ -9,6 +9,7 @@
 #import "REAppInfoController.h"
 #import "RETableView.h"
 #import "REAppInfoCell.h"
+#import "REInfoCodeController.h"
 
 typedef NS_ENUM(NSInteger, REInfoType) {
     REInfoTypeDictionary    = 0,
@@ -60,10 +61,14 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     self.view.backgroundColor = [UIColor whiteColor];
     
     if (self.isRoot) {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-                                                                              target:self
-                                                                              action:@selector(share:)];
-        self.navigationItem.rightBarButtonItem = item;
+        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                   target:self
+                                                                                   action:@selector(share:)];
+        UIBarButtonItem *toggleItem = [[UIBarButtonItem alloc] initWithTitle:@"Code"
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(viewCode:)];
+        self.navigationItem.rightBarButtonItems = @[shareItem, toggleItem];
     }
     
     self.tableView = [[RETableView alloc] init];
@@ -82,6 +87,12 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
                                                                                          applicationActivities:nil];
     [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)viewCode:(UIBarButtonItem *)sender {
+    REInfoCodeController *codeController = [[REInfoCodeController alloc] initWithAppInfo:self.propertyList];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:codeController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - UITableView

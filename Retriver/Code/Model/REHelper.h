@@ -1,5 +1,5 @@
 //
-//  REWorkspace.h
+//  REHelper.h
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface REWorkspace : NSObject
+@interface REHelper : NSObject
 
 + (NSArray *)installedApplications;
 

@@ -22,7 +22,7 @@
     id bundle = [data invoke:@"containingBundle"] ?: data;
     self.imageView.image = [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
                                  arguments:@[[bundle valueForKey:@"bundleIdentifier"], @(10), @([UIScreen mainScreen].scale)]];
-    self.textLabel.text = [REWorkspace displayNameForApplication:data];
+    self.textLabel.text = [REHelper displayNameForApplication:data];
 }
 
 @end

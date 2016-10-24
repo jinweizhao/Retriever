@@ -14,6 +14,6 @@
 #import "Masonry.h"
 #import "RuntimeInvoker.h"
 #import "EXTScope.h"
-#import "REWorkspace.h"
+#import "REHelper.h"
 
 #endif /* REPrefixHeader_pch */
