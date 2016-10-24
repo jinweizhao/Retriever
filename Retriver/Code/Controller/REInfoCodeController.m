@@ -42,24 +42,6 @@ typedef JSValue XMLBeautifier;
     return self;
 }
 
-- (id)propertyList {
-    if (_propertyList == nil) {
-        if ([self.info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
-            _propertyList = [self.info valueForKeyPath:kREPropertyListKeyPath];
-        } else {
-            _propertyList = [self.info valueForKey:kREPluginPropertyKey];
-        }
-    }
-    return _propertyList;
-}
-
-- (NSString *)displayName {
-    if (_displayName == nil) {
-        _displayName = [REHelper displayNameForApplication:self.info];
-    }
-    return _displayName;
-}
-
 - (UISegmentedControl *)segmentedControl {
     return (UISegmentedControl *)self.navigationItem.titleView;
 }
@@ -80,20 +62,7 @@ typedef JSValue XMLBeautifier;
                               action:@selector(didSegmentedControlValueChanged:) 
                     forControlEvents:UIControlEventValueChanged];
     
-    // viewport config
-    NSString *source = @"\
-    var meta = document.createElement('meta');\
-    meta.setAttribute('name', 'viewport');\
-    meta.setAttribute('content', 'width=device-width');\
-    document.getElementsByTagName('head')[0].appendChild(meta);";
-    WKUserScript *script = [[WKUserScript alloc] initWithSource:source injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-    WKUserContentController *contentController = [[WKUserContentController alloc] init];
-    [contentController addUserScript:script];
-    
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    configuration.userContentController = contentController;
-
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
+    self.webView = [[WKWebView alloc] init];
     self.webView.backgroundColor = self.view.backgroundColor;
     self.webView.scrollView.backgroundColor = self.webView.backgroundColor;
     [self.view addSubview:self.webView];
@@ -136,6 +105,7 @@ typedef JSValue XMLBeautifier;
 
 - (NSString *)wrapCode:(NSString *)code type:(NSString *)type {
     NSString *format = @"\
+    <meta name='viewport' content='width=device-width'></meta>\
     <link rel='stylesheet' href='github.css'>\
     <script src='highlight.pack.js'></script>\
     <script>hljs.initHighlightingOnLoad();</script>\
@@ -145,6 +115,24 @@ typedef JSValue XMLBeautifier;
 }
 
 #pragma mark - Lazy Init
+
+- (id)propertyList {
+    if (_propertyList == nil) {
+        if ([self.info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
+            _propertyList = [self.info valueForKeyPath:kREPropertyListKeyPath];
+        } else {
+            _propertyList = [self.info valueForKey:kREPluginPropertyKey];
+        }
+    }
+    return _propertyList;
+}
+
+- (NSString *)displayName {
+    if (_displayName == nil) {
+        _displayName = [REHelper displayNameForApplication:self.info];
+    }
+    return _displayName;
+}
 
 - (NSString *)json {
     if (_json == nil) {
