@@ -23,6 +23,7 @@ Retrive InfoPlist file without Jailbreak on iOS Devices
 # Reference
 1. [`iOS-Runtime-Headers`](https://github.com/nst/iOS-Runtime-Headers/)
 2. [`RuntimeInvoker`](https://github.com/cyanzhong/RuntimeInvoker)
+3. [`highlight.js`](https://highlightjs.org/)
 
 # License
 [`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
