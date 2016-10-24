@@ -16,4 +16,8 @@
 
 + (NSString *)displayNameForApplication:(id)app;
 
++ (void)openGitHub;
+
++ (void)shareRetriver;
+
 @end

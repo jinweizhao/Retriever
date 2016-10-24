@@ -70,9 +70,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 }
 
 - (void)github:(UIBarButtonItem *)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/cyanzhong/retriver"]
-                                       options:@{}
-                             completionHandler:nil];
+    [REHelper openGitHub];
 }
 
 - (UISegmentedControl *)segmentedControl {

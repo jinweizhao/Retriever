@@ -119,7 +119,7 @@ typedef JSValue XMLBeautifier;
 
 - (id)propertyList {
     if (_propertyList == nil) {
-        if ([self.info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
+        if ([self.info isKindOfClass:NSClassFromString(kREApplicationProxyClass)]) {
             _propertyList = [self.info valueForKeyPath:kREPropertyListKeyPath];
         } else {
             _propertyList = [self.info valueForKey:kREPluginPropertyKey];

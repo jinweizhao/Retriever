@@ -33,11 +33,11 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 - (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
         NSArray *allKeys;
-        if ([info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
+        if ([info isKindOfClass:NSClassFromString(kREApplicationProxyClass)]) {
             _isRoot = YES;
             _propertyList = [info valueForKeyPath:kREPropertyListKeyPath];
             allKeys = [_propertyList allKeys];
-        } else if ([info isKindOfClass:NSClassFromString(@"LSPlugInKitProxy")]) {
+        } else if ([info isKindOfClass:NSClassFromString(kREPlugInKitProxyClass)]) {
             _isRoot = YES;
             _propertyList = [info valueForKey:kREPluginPropertyKey];
             allKeys = [_propertyList allKeys];

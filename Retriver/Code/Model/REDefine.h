@@ -15,6 +15,8 @@ static NSString *const kREPropertyListKeyPath       = @"_infoDictionary.property
 static NSString *const kREDisplayNameKeyPath        = @"_infoDictionary.propertyList.CFBundleDisplayName";
 static NSString *const kREPluginPropertyKey         = @"infoPlist";
 static NSString *const kRELocalizedShortNameKey     = @"localizedShortName";
+static NSString *const kREApplicationProxyClass     = @"LSApplicationProxy";
+static NSString *const kREPlugInKitProxyClass       = @"LSPlugInKitProxy";
 
 static inline BOOL isBlankText(NSString *str) {
     if ([str respondsToSelector:@selector(length)]) {

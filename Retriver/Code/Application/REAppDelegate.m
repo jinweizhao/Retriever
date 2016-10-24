@@ -8,6 +8,7 @@
 
 #import "REAppDelegate.h"
 #import "REAppListController.h"
+#import "REAppDelegate+Shortcut.h"
 
 @interface REAppDelegate()
 
@@ -27,6 +28,12 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self.viewController refresh];
+}
+
+#pragma mark - Shortcut
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    [self performActionForShortcutItem:shortcutItem];
 }
 
 @end

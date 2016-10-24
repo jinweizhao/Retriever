@@ -109,6 +109,7 @@
 		8787A5221DBDACE90059E916 /* xt256.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CD1DBDACE90059E916 /* xt256.css */; };
 		8787A5231DBDACE90059E916 /* zenburn.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CE1DBDACE90059E916 /* zenburn.css */; };
 		8787A5251DBDD8F10059E916 /* vkbeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A5241DBDD8F10059E916 /* vkbeautify.js */; };
+		8787A5D61DBE53620059E916 /* REAppDelegate+Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A5D51DBE53620059E916 /* REAppDelegate+Shortcut.m */; };
 		87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REHelper.m */; };
 		87A5F1151DBA667B00CE6772 /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1141DBA667B00CE6772 /* REAppListCell.m */; };
 		87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1181DBA67F500CE6772 /* RETableView.m */; };
@@ -248,6 +249,8 @@
 		8787A4CD1DBDACE90059E916 /* xt256.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.css; sourceTree = "<group>"; };
 		8787A4CE1DBDACE90059E916 /* zenburn.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.css; sourceTree = "<group>"; };
 		8787A5241DBDD8F10059E916 /* vkbeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vkbeautify.js; sourceTree = "<group>"; };
+		8787A5D41DBE53620059E916 /* REAppDelegate+Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "REAppDelegate+Shortcut.h"; sourceTree = "<group>"; };
+		8787A5D51DBE53620059E916 /* REAppDelegate+Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "REAppDelegate+Shortcut.m"; sourceTree = "<group>"; };
 		87A5F10F1DBA1A6C00CE6772 /* REHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHelper.h; sourceTree = "<group>"; };
 		87A5F1101DBA1A6C00CE6772 /* REHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHelper.m; sourceTree = "<group>"; };
 		87A5F1131DBA667B00CE6772 /* REAppListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppListCell.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 			children = (
 				877EF93E1DB9B77500D83C27 /* REAppDelegate.h */,
 				877EF93F1DB9B77500D83C27 /* REAppDelegate.m */,
+				8787A5D41DBE53620059E916 /* REAppDelegate+Shortcut.h */,
+				8787A5D51DBE53620059E916 /* REAppDelegate+Shortcut.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -713,6 +718,7 @@
 				87A5F11C1DBA67F500CE6772 /* RETableViewCell.m in Sources */,
 				877EF9701DB9B8E300D83C27 /* NSArray+MASAdditions.m in Sources */,
 				877EF96F1DB9B8E300D83C27 /* MASViewConstraint.m in Sources */,
+				8787A5D61DBE53620059E916 /* REAppDelegate+Shortcut.m in Sources */,
 				877EF96E1DB9B8E300D83C27 /* MASViewAttribute.m in Sources */,
 				87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */,
 				877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */,
