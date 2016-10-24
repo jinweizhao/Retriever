@@ -1,5 +1,5 @@
 //
-//  REAppInfoController.h
+//  REInfoTreeController.h
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface REAppInfoController : UIViewController
+@interface REInfoTreeController : UIViewController
 
 - (instancetype)initWithInfo:(id)info;
 

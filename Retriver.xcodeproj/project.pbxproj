@@ -24,7 +24,7 @@
 		877EF9721DB9B8E300D83C27 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9661DB9B8E300D83C27 /* View+MASAdditions.m */; };
 		877EF9731DB9B8E300D83C27 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9691DB9B8E300D83C27 /* ViewController+MASAdditions.m */; };
 		877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97A1DB9B9CD00D83C27 /* EXTScope.m */; };
-		877EF9861DB9BE7000D83C27 /* REAppInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REAppInfoController.m */; };
+		877EF9861DB9BE7000D83C27 /* REInfoTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REInfoTreeController.m */; };
 		8787A4771DBDA4E60059E916 /* REInfoCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A4761DBDA4E60059E916 /* REInfoCodeController.m */; };
 		8787A4D01DBDACE90059E916 /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47A1DBDACE90059E916 /* highlight.pack.js */; };
 		8787A4D11DBDACE90059E916 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47B1DBDACE90059E916 /* LICENSE */; };
@@ -157,8 +157,8 @@
 		877EF9791DB9B9CD00D83C27 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		877EF97A1DB9B9CD00D83C27 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		877EF97B1DB9B9CD00D83C27 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
-		877EF9841DB9BE7000D83C27 /* REAppInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppInfoController.h; sourceTree = "<group>"; };
-		877EF9851DB9BE7000D83C27 /* REAppInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REAppInfoController.m; sourceTree = "<group>"; };
+		877EF9841DB9BE7000D83C27 /* REInfoTreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoTreeController.h; sourceTree = "<group>"; };
+		877EF9851DB9BE7000D83C27 /* REInfoTreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoTreeController.m; sourceTree = "<group>"; };
 		877EF9871DB9BECE00D83C27 /* REDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
 		8787A4751DBDA4E60059E916 /* REInfoCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoCodeController.h; sourceTree = "<group>"; };
 		8787A4761DBDA4E60059E916 /* REInfoCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoCodeController.m; sourceTree = "<group>"; };
@@ -344,10 +344,10 @@
 			children = (
 				877EF9411DB9B77500D83C27 /* REAppListController.h */,
 				877EF9421DB9B77500D83C27 /* REAppListController.m */,
-				877EF9841DB9BE7000D83C27 /* REAppInfoController.h */,
-				877EF9851DB9BE7000D83C27 /* REAppInfoController.m */,
 				8787A4751DBDA4E60059E916 /* REInfoCodeController.h */,
 				8787A4761DBDA4E60059E916 /* REInfoCodeController.m */,
+				877EF9841DB9BE7000D83C27 /* REInfoTreeController.h */,
+				877EF9851DB9BE7000D83C27 /* REInfoTreeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -702,7 +702,7 @@
 			files = (
 				877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */,
 				877EF96C1DB9B8E300D83C27 /* MASConstraintMaker.m in Sources */,
-				877EF9861DB9BE7000D83C27 /* REAppInfoController.m in Sources */,
+				877EF9861DB9BE7000D83C27 /* REInfoTreeController.m in Sources */,
 				87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */,
 				877EF9181DB9B08300D83C27 /* main.m in Sources */,
 				877EF94B1DB9B77500D83C27 /* RuntimeInvoker.m in Sources */,

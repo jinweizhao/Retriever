@@ -9,7 +9,7 @@
 #import "REAppListController.h"
 #import "RETableView.h"
 #import "REAppListCell.h"
-#import "REAppInfoController.h"
+#import "REInfoCodeController.h"
 
 typedef NS_ENUM(NSInteger, REListType) {
     REListTypeApp       = 0,
@@ -123,10 +123,9 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:self.filtered[indexPath.row]];
-    infoController.title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    REInfoCodeController *controller = [[REInfoCodeController alloc] initWithInfo:self.filtered[indexPath.row]];
     self.searchController.active = NO;
-    [self.navigationController pushViewController:infoController animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - Search

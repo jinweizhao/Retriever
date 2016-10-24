@@ -9,10 +9,12 @@
 #import "REInfoCodeController.h"
 #import <WebKit/WebKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "REInfoTreeController.h"
 
 typedef NS_ENUM(NSInteger, REInfoCodeType) {
     REInfoCodeTypeJSON      = 0,
-    REInfoCodeTypeXML
+    REInfoCodeTypeXML,
+    REInfoCodeTypeTree
 };
 
 typedef JSValue XMLBeautifier;
@@ -21,24 +23,41 @@ typedef JSValue XMLBeautifier;
 
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) id info;
+@property (nonatomic, strong) id propertyList;
+@property (nonatomic, strong) NSString *displayName;
 @property (nonatomic, copy) NSString *json;
 @property (nonatomic, copy) NSString *xml;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) XMLBeautifier *beautifier;
+@property (nonatomic, assign) REInfoCodeType selectedType;
 
 @end
 
 @implementation REInfoCodeController
 
-- (instancetype)initWithAppInfo:(id)info {
+- (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
         _info = info;
     }
     return self;
 }
 
-- (void)done:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (id)propertyList {
+    if (_propertyList == nil) {
+        if ([self.info isKindOfClass:NSClassFromString(@"LSApplicationProxy")]) {
+            _propertyList = [self.info valueForKeyPath:kREPropertyListKeyPath];
+        } else {
+            _propertyList = [self.info valueForKey:kREPluginPropertyKey];
+        }
+    }
+    return _propertyList;
+}
+
+- (NSString *)displayName {
+    if (_displayName == nil) {
+        _displayName = [REHelper displayNameForApplication:self.info];
+    }
+    return _displayName;
 }
 
 - (UISegmentedControl *)segmentedControl {
@@ -49,11 +68,12 @@ typedef JSValue XMLBeautifier;
     
     [super viewDidLoad];
     self.view.backgroundColor = color(0xF8F8F8);
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target:self
-                                                                                           action:@selector(done:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Share"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(share:)];
     
-    self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"JSON", @"XML"]];
+    self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"JSON", @"XML", @"Tree"]];
     
     self.segmentedControl.selectedSegmentIndex = REInfoCodeTypeJSON;
     [self.segmentedControl addTarget:self 
@@ -84,8 +104,25 @@ typedef JSValue XMLBeautifier;
     [self refresh];
 }
 
+- (void)share:(UIBarButtonItem *)sender {
+    NSString *path = AppDocumentPath([NSString stringWithFormat:@"%@.plist", self.displayName]);
+    [self.propertyList writeToFile:path atomically:YES];
+    NSURL *fileUrl = [NSURL fileURLWithPath:path];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
+                                                                                         applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
 - (void)didSegmentedControlValueChanged:(UISegmentedControl *)sender {
-    [self refresh];
+    if (sender.selectedSegmentIndex == REInfoCodeTypeTree) {
+        REInfoTreeController *controller = [[REInfoTreeController alloc] initWithInfo:self.info];
+        controller.title = self.displayName;
+        [self.navigationController pushViewController:controller animated:YES];
+        sender.selectedSegmentIndex = self.selectedType;
+    } else {
+        self.selectedType = sender.selectedSegmentIndex;
+        [self refresh];
+    }
 }
 
 - (void)refresh {
@@ -111,7 +148,7 @@ typedef JSValue XMLBeautifier;
 
 - (NSString *)json {
     if (_json == nil) {
-        NSData *data = [NSJSONSerialization dataWithJSONObject:self.info
+        NSData *data = [NSJSONSerialization dataWithJSONObject:self.propertyList
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:nil];
         NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -122,7 +159,7 @@ typedef JSValue XMLBeautifier;
 
 - (NSString *)xml {
     if (_xml == nil) {
-        NSData *data = [NSPropertyListSerialization dataWithPropertyList:self.info
+        NSData *data = [NSPropertyListSerialization dataWithPropertyList:self.propertyList
                                                                   format:NSPropertyListXMLFormat_v1_0
                                                                  options:0
                                                                    error:nil];

@@ -10,6 +10,6 @@
 
 @interface REInfoCodeController : UIViewController
 
-- (instancetype)initWithAppInfo:(id)info;
+- (instancetype)initWithInfo:(id)info;
 
 @end

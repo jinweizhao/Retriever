@@ -1,15 +1,14 @@
 //
-//  REAppInfoController.m
+//  REInfoTreeController.m
 //  Retriver
 //
 //  Created by cyan on 2016/10/21.
 //  Copyright © 2016年 cyan. All rights reserved.
 //
 
-#import "REAppInfoController.h"
+#import "REInfoTreeController.h"
 #import "RETableView.h"
 #import "REAppInfoCell.h"
-#import "REInfoCodeController.h"
 
 typedef NS_ENUM(NSInteger, REInfoType) {
     REInfoTypeDictionary    = 0,
@@ -20,7 +19,7 @@ typedef NS_ENUM(NSInteger, REInfoType) {
 
 typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle);
 
-@interface REAppInfoController ()<UITableViewDelegate, UITableViewDataSource>
+@interface REInfoTreeController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) BOOL isRoot;
 @property (nonatomic, strong) NSDictionary *propertyList;
@@ -29,7 +28,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 
 @end
 
-@implementation REAppInfoController
+@implementation REInfoTreeController
 
 - (instancetype)initWithInfo:(id)info {
     if (self = [super init]) {
@@ -56,22 +55,8 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    if (self.isRoot) {
-        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"Share"
-                                                                      style:UIBarButtonItemStylePlain
-                                                                     target:self
-                                                                     action:@selector(share:)];
-        UIBarButtonItem *toggleItem = [[UIBarButtonItem alloc] initWithTitle:@"Code"
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self
-                                                                      action:@selector(viewCode:)];
-        self.navigationItem.rightBarButtonItems = @[shareItem, toggleItem];
-    }
-    
     self.tableView = [[RETableView alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -79,21 +64,6 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-}
-
-- (void)share:(UIBarButtonItem *)sender {
-    NSString *path = AppDocumentPath([NSString stringWithFormat:@"%@.plist", self.title]);
-    [self.propertyList writeToFile:path atomically:YES];
-    NSURL *fileUrl = [NSURL fileURLWithPath:path];
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
-                                                                                         applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:nil];
-}
-
-- (void)viewCode:(UIBarButtonItem *)sender {
-    REInfoCodeController *codeController = [[REInfoCodeController alloc] initWithAppInfo:self.propertyList];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:codeController];
-    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - UITableView
@@ -151,7 +121,7 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     id key = self.keyList[indexPath.row];
     if ([self infoTypeAtIndexPath:indexPath] != REInfoTypeValue) {
         id info = self.propertyList ? self.propertyList[key] : key;
-        REAppInfoController *infoController = [[REAppInfoController alloc] initWithInfo:info];
+        REInfoTreeController *infoController = [[REInfoTreeController alloc] initWithInfo:info];
         [self fetchInfoWithIndexPath:indexPath completionHandler:^(UITableViewCellAccessoryType accessoryType, NSString *title, NSString *subtitle) {
             infoController.title = title;
         }];
