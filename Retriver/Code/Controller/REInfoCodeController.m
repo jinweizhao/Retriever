@@ -82,12 +82,16 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
 }
 
 - (void)refresh {
-    switch (self.segmentedControl.selectedSegmentIndex) {
-        case REInfoCodeTypeJSON: [self convertToJSON]; break;
-        case REInfoCodeTypeXML: [self convertToXML]; break;
-        default: break;
-    }
-    [self.webView loadHTMLString:self.code baseURL:[[NSBundle mainBundle] bundleURL]];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        switch (self.segmentedControl.selectedSegmentIndex) {
+            case REInfoCodeTypeJSON: [self convertToJSON]; break;
+            case REInfoCodeTypeXML: [self convertToXML]; break;
+            default: break;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.webView loadHTMLString:self.code baseURL:[[NSBundle mainBundle] bundleURL]];
+        });
+    });
 }
 
 - (NSString *)wrapCode:(NSString *)code type:(NSString *)type {
