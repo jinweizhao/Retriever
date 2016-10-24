@@ -27,6 +27,9 @@ Retrive InfoPlist file without Jailbreak on iOS Devices
 3. [`highlight.js`](https://highlightjs.org/)
 4. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
 
+# ⚠️
+Retriver based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
+
 # License
 [`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
 
