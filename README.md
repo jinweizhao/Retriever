@@ -15,6 +15,7 @@ Retrive InfoPlist file without Jailbreak on iOS Devices
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/2.jpg)
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/3.jpg)
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/4.jpg)
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/5.jpg)
 
 # Next Step
 1. More information
