@@ -37,6 +37,10 @@ typedef NS_ENUM(NSInteger, REListType) {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"Apps", @"Plugins"]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GitHub" 
+                                                                              style:UIBarButtonItemStylePlain 
+                                                                             target:self
+                                                                             action:@selector(github:)];
     
     self.segmentedControl.selectedSegmentIndex = REListTypeApp;
     [self.segmentedControl addTarget:self 
@@ -57,6 +61,12 @@ typedef NS_ENUM(NSInteger, REListType) {
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
     [self refresh];
+}
+
+- (void)github:(UIBarButtonItem *)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/cyanzhong/retriver"]
+                                       options:@{}
+                             completionHandler:nil];
 }
 
 - (UISegmentedControl *)segmentedControl {
