@@ -108,6 +108,7 @@
 		8787A5211DBDACE90059E916 /* xcode.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CC1DBDACE90059E916 /* xcode.css */; };
 		8787A5221DBDACE90059E916 /* xt256.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CD1DBDACE90059E916 /* xt256.css */; };
 		8787A5231DBDACE90059E916 /* zenburn.css in Resources */ = {isa = PBXBuildFile; fileRef = 8787A4CE1DBDACE90059E916 /* zenburn.css */; };
+		8787A5251DBDD8F10059E916 /* vkbeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A5241DBDD8F10059E916 /* vkbeautify.js */; };
 		87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REHelper.m */; };
 		87A5F1151DBA667B00CE6772 /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1141DBA667B00CE6772 /* REAppListCell.m */; };
 		87A5F11B1DBA67F500CE6772 /* RETableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1181DBA67F500CE6772 /* RETableView.m */; };
@@ -246,6 +247,7 @@
 		8787A4CC1DBDACE90059E916 /* xcode.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.css; sourceTree = "<group>"; };
 		8787A4CD1DBDACE90059E916 /* xt256.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.css; sourceTree = "<group>"; };
 		8787A4CE1DBDACE90059E916 /* zenburn.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.css; sourceTree = "<group>"; };
+		8787A5241DBDD8F10059E916 /* vkbeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vkbeautify.js; sourceTree = "<group>"; };
 		87A5F10F1DBA1A6C00CE6772 /* REHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHelper.h; sourceTree = "<group>"; };
 		87A5F1101DBA1A6C00CE6772 /* REHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHelper.m; sourceTree = "<group>"; };
 		87A5F1131DBA667B00CE6772 /* REAppListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppListCell.h; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				8787A4781DBDACE90059E916 /* highlight */,
+				8787A5241DBDD8F10059E916 /* vkbeautify.js */,
 				877EF94C1DB9B7AE00D83C27 /* Media.xcassets */,
 				877EF94E1DB9B7C000D83C27 /* LaunchScreen.storyboard */,
 			);
@@ -435,12 +438,12 @@
 		8787A4781DBDACE90059E916 /* highlight */ = {
 			isa = PBXGroup;
 			children = (
+				8787A47E1DBDACE90059E916 /* styles */,
 				8787A4791DBDACE90059E916 /* CHANGES.md */,
 				8787A47A1DBDACE90059E916 /* highlight.pack.js */,
 				8787A47B1DBDACE90059E916 /* LICENSE */,
 				8787A47C1DBDACE90059E916 /* README.md */,
 				8787A47D1DBDACE90059E916 /* README.ru.md */,
-				8787A47E1DBDACE90059E916 /* styles */,
 			);
 			path = highlight;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				8787A4D61DBDACE90059E916 /* arduino-light.css in Resources */,
 				8787A51C1DBDACE90059E916 /* tomorrow-night-bright.css in Resources */,
 				8787A5191DBDACE90059E916 /* solarized-light.css in Resources */,
+				8787A5251DBDD8F10059E916 /* vkbeautify.js in Resources */,
 				8787A4E41DBDACE90059E916 /* atelier-lakeside-light.css in Resources */,
 				8787A4F31DBDACE90059E916 /* darcula.css in Resources */,
 				8787A4D91DBDACE90059E916 /* atelier-cave-dark.css in Resources */,

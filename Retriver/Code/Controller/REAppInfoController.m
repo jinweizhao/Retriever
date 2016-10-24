@@ -61,9 +61,10 @@ typedef void (^REItemInfoFetchBlock)(UITableViewCellAccessoryType accessoryType,
     self.view.backgroundColor = [UIColor whiteColor];
     
     if (self.isRoot) {
-        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                                   target:self
-                                                                                   action:@selector(share:)];
+        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"Share"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(share:)];
         UIBarButtonItem *toggleItem = [[UIBarButtonItem alloc] initWithTitle:@"Code"
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self

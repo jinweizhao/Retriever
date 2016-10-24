@@ -8,6 +8,7 @@
 
 #import "REInfoCodeController.h"
 #import <WebKit/WebKit.h>
+#import <JavaScriptCore/JavaScriptCore.h>
 
 typedef NS_ENUM(NSInteger, REInfoCodeType) {
     REInfoCodeTypeJSON      = 0,
@@ -20,6 +21,7 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
 @property (nonatomic, strong) id info;
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) JSValue *parser;
 
 @end
 
@@ -30,6 +32,18 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
         _info = info;
     }
     return self;
+}
+
+- (JSValue *)parser {
+    if (_parser == nil) {
+        JSContext *context = [[JSContext alloc] init];
+        NSString *script = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vkbeautify" ofType:@"js"]
+                                                     encoding:NSUTF8StringEncoding
+                                                        error:nil];
+        [context evaluateScript:script];
+        _parser = context[@"parser"][@"xml"];
+    }
+    return _parser;
 }
 
 - (void)done:(UIBarButtonItem *)sender {
@@ -117,7 +131,9 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
                                                               format:NSPropertyListXMLFormat_v1_0
                                                              options:0
                                                                error:nil];
-    NSMutableString *xml = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] mutableCopy];
+    NSArray *arguments = @[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding], @(2)];
+    NSString *pretty = [[self.parser callWithArguments:arguments] toString];
+    NSMutableString *xml = pretty.mutableCopy;
     [xml replaceOccurrencesOfString:@"<" withString:@"&lt;" options:0 range:NSMakeRange(0, xml.length)];
     [xml replaceOccurrencesOfString:@">" withString:@"&gt;" options:0 range:NSMakeRange(0, xml.length)];
     self.code = [self wrapCode:xml type:@"xml"];
