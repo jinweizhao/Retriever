@@ -100,7 +100,7 @@ typedef NS_ENUM(NSInteger, REInfoCodeType) {
     <link rel='stylesheet' href='github.css'>\
     <script src='highlight.pack.js'></script>\
     <script>hljs.initHighlightingOnLoad();</script>\
-    <style>*{margin:0; padding:0;}</style>\
+    <style>*{margin:0; padding:0;} body{background-color: #F8F8F8;}</style>\
     <pre><code class='%@'>%@</code></pre>";
     return [NSString stringWithFormat:format, type, code];
 }
