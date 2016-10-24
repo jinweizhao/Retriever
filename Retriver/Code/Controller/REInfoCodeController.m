@@ -79,7 +79,8 @@ typedef JSValue XMLBeautifier;
     NSURL *fileUrl = [NSURL fileURLWithPath:path];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
                                                                                          applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    [rootViewController presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)didSegmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -171,6 +172,17 @@ typedef JSValue XMLBeautifier;
         _beautifier = context[@"beautifier"][@"xml"];
     }
     return _beautifier;
+}
+
+#pragma mark - 3D Touch Menu
+
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    @weakify(self)
+    UIPreviewAction *shareAction = [UIPreviewAction actionWithTitle:@"Share" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        @strongify(self)
+        [self share:nil];
+    }];
+    return @[shareAction];
 }
 
 @end

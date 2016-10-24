@@ -19,7 +19,8 @@ typedef NS_ENUM(NSInteger, REListType) {
 @interface REAppListController ()<
     UITableViewDelegate,
     UITableViewDataSource,
-    UISearchResultsUpdating
+    UISearchResultsUpdating,
+    UIViewControllerPreviewingDelegate
 >
 
 @property (nonatomic, strong) NSArray *list;
@@ -60,6 +61,10 @@ typedef NS_ENUM(NSInteger, REListType) {
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
+    }
     
     [self refresh];
 }
@@ -106,6 +111,11 @@ typedef NS_ENUM(NSInteger, REListType) {
     [self.tableView reloadData];
 }
 
+- (REInfoCodeController *)codeControllerAtIndexPath:(NSIndexPath *)indexPath {
+    REInfoCodeController *controller = [[REInfoCodeController alloc] initWithInfo:self.filtered[indexPath.row]];
+    return controller;
+}
+
 #pragma mark - UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -124,9 +134,8 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    REInfoCodeController *controller = [[REInfoCodeController alloc] initWithInfo:self.filtered[indexPath.row]];
     self.searchController.active = NO;
-    [self.navigationController pushViewController:controller animated:YES];
+    [self.navigationController pushViewController:[self codeControllerAtIndexPath:indexPath] animated:YES];
 }
 
 #pragma mark - Search
@@ -151,6 +160,21 @@ typedef NS_ENUM(NSInteger, REListType) {
             });
         });
     }
+}
+
+#pragma mark - 3D Touch
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    CGPoint point = [self.tableView.superview convertPoint:location toView:nil];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    if (indexPath) {
+        return [self codeControllerAtIndexPath:indexPath];
+    }
+    return nil;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 @end
