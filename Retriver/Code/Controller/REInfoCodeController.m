@@ -128,8 +128,8 @@ typedef JSValue XMLBeautifier;
 - (NSString *)wrapCode:(NSString *)code type:(NSString *)type {
     NSString *format = @"\
     <meta name='viewport' content='width=device-width'></meta>\
-    <link rel='stylesheet' href='github.css'>\
-    <script src='highlight.pack.js'></script>\
+    <link rel='stylesheet' href='theme.css'>\
+    <script src='highlight.js'></script>\
     <script>hljs.initHighlightingOnLoad();</script>\
     <style>*{margin:0; padding:0;}</style>\
     <pre><code class='%@'>%@</code></pre>";
