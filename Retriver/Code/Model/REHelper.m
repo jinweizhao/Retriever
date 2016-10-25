@@ -37,6 +37,18 @@ static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/ret
                  arguments:@[[self bundleIdentifierForApplication:app], @(10), @([UIScreen mainScreen].scale)]];
 }
 
++ (id)applicationForIdentifier:(NSString *)identifier {
+    return [NSClassFromString(@"LSApplicationProxy") invoke:@"applicationProxyForIdentifier:" args:identifier, nil];
+}
+
++ (NSArray *)applicationsForIdentifiers:(NSArray *)identifiers {
+    NSMutableArray *apps = [NSMutableArray array];
+    for (NSString *identifier in identifiers) {
+        [apps addObject:[self applicationForIdentifier:identifier]];
+    }
+    return apps;
+}
+
 + (void)openApplication:(id)app {
     [[self defaultWorkspace] invoke:@"openApplicationWithBundleID:"
                                args:[self bundleIdentifierForApplication:app], nil];

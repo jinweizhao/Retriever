@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8712F9ED1DBEF9730051ABA1 /* RECache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8712F9EC1DBEF9730051ABA1 /* RECache.m */; };
 		877EF9181DB9B08300D83C27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9171DB9B08300D83C27 /* main.m */; };
 		877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF93F1DB9B77500D83C27 /* REAppDelegate.m */; };
 		877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9421DB9B77500D83C27 /* REAppListController.m */; };
@@ -119,6 +120,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8712F9EB1DBEF9730051ABA1 /* RECache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECache.h; sourceTree = "<group>"; };
+		8712F9EC1DBEF9730051ABA1 /* RECache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECache.m; sourceTree = "<group>"; };
 		877EF9131DB9B08300D83C27 /* Retriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Retriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877EF9171DB9B08300D83C27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		877EF9271DB9B08300D83C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 				877EF9871DB9BECE00D83C27 /* REDefine.h */,
 				87A5F10F1DBA1A6C00CE6772 /* REHelper.h */,
 				87A5F1101DBA1A6C00CE6772 /* REHelper.m */,
+				8712F9EB1DBEF9730051ABA1 /* RECache.h */,
+				8712F9EC1DBEF9730051ABA1 /* RECache.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */,
 				877EF96A1DB9B8E300D83C27 /* MASCompositeConstraint.m in Sources */,
 				8787A4771DBDA4E60059E916 /* REInfoCodeController.m in Sources */,
+				8712F9ED1DBEF9730051ABA1 /* RECache.m in Sources */,
 				87A5F11F1DBA681A00CE6772 /* REAppInfoCell.m in Sources */,
 				877EF9711DB9B8E300D83C27 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);

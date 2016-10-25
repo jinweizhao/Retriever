@@ -13,7 +13,8 @@
 
 typedef NS_ENUM(NSInteger, REListType) {
     REListTypeApp       = 0,
-    REListTypePlugin
+    REListTypePlugin,
+    REListTypeFavourite
 };
 
 @interface REAppListController ()<
@@ -28,6 +29,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) RETableView *tableView;
 @property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableSet *identifierSet;
 
 @end
 
@@ -37,11 +39,7 @@ typedef NS_ENUM(NSInteger, REListType) {
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"Apps", @"Plugins"]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"GitHub" 
-                                                                              style:UIBarButtonItemStylePlain 
-                                                                             target:self
-                                                                             action:@selector(github:)];
+    self.navigationItem.titleView = [[UISegmentedControl alloc] initWithItems:@[@"Apps", @"Plugins", @"Favourites"]];
     
     self.segmentedControl.selectedSegmentIndex = REListTypeApp;
     [self.segmentedControl addTarget:self 
@@ -69,10 +67,6 @@ typedef NS_ENUM(NSInteger, REListType) {
     [self refresh];
 }
 
-- (void)github:(UIBarButtonItem *)sender {
-    [REHelper openGitHub];
-}
-
 - (UISegmentedControl *)segmentedControl {
     return (UISegmentedControl *)self.navigationItem.titleView;
 }
@@ -86,6 +80,9 @@ typedef NS_ENUM(NSInteger, REListType) {
     
     NSArray *apps = [REHelper installedApplications];
     NSArray *plugins = [REHelper installedPlugins];
+    NSArray *identifiers = [RECache favouriteAppIdentifiers];
+    self.identifierSet = [NSMutableSet setWithArray:identifiers];
+    NSArray *favourites = [REHelper applicationsForIdentifiers:identifiers];
     NSArray *data;
     
     [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
@@ -96,6 +93,7 @@ typedef NS_ENUM(NSInteger, REListType) {
     switch (self.segmentedControl.selectedSegmentIndex) {
         case REListTypeApp: data = apps; break;
         case REListTypePlugin: data = plugins; break;
+        case REListTypeFavourite: data = favourites; break;
         default: break;
     }
     
@@ -132,8 +130,40 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    REInfoCodeController *controller = [self codeControllerAtIndexPath:indexPath];
     self.searchController.active = NO;
-    [self.navigationController pushViewController:[self codeControllerAtIndexPath:indexPath] animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *identifier = [REHelper bundleIdentifierForApplication:self.filtered[indexPath.row]];
+    BOOL like = self.segmentedControl.selectedSegmentIndex != REListTypeFavourite && ![self.identifierSet containsObject:identifier];
+    NSString *title = like ? @"Like" : @"Dislike";
+    
+    @weakify(self)
+    void (^actionHandler)(UITableViewRowAction *action, NSIndexPath *indexPath) = ^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        @strongify(self)
+        if (like) {
+            [self.identifierSet addObject:identifier];
+        } else {
+            [self.identifierSet removeObject:identifier];
+        }
+        if (self.segmentedControl.selectedSegmentIndex == REListTypeFavourite) {
+            NSMutableArray *list = self.filtered.mutableCopy;
+            [list removeObjectAtIndex:indexPath.row];
+            self.filtered = list;
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            [tableView reloadData];
+        }
+        [RECache setFavouriteAppIdentifiers:self.identifierSet.allObjects];
+    };
+    
+    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                                                      title:title
+                                                                    handler:actionHandler];
+    return @[action];
 }
 
 #pragma mark - Search

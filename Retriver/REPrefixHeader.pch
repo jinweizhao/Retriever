@@ -15,5 +15,6 @@
 #import "RuntimeInvoker.h"
 #import "EXTScope.h"
 #import "REHelper.h"
+#import "RECache.h"
 
 #endif /* REPrefixHeader_pch */
