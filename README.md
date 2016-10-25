@@ -11,11 +11,17 @@ Retrive InfoPlist without Jailbreak on iOS Devices
 7. Click `Apps` or `Plugins` to switch
 
 # Screenshots
-![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/1.jpg)
-![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/2.jpg)
-![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/3.jpg)
-![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/4.jpg)
-![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/5.jpg)
+
+## Apps & Plugins
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/1.PNG)
+## View as JSON
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/2.PNG)
+## View as XML
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/3.PNG)
+## View as Tree
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/4.PNG)
+## Favourite Apps
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/5.PNG)
 
 # Next Step
 1. More information
