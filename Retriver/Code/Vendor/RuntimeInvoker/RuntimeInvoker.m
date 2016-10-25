@@ -366,7 +366,7 @@ id _invoke(id target, NSString *selector, NSArray *arguments) {
         id returnValue = [invocation invoke:target selector:sel returnType:signature.returnType];
         return returnValue;
     } else {
-        // NSLog(@"# RuntimeInvoker # selector: \"%@\" NOT FOUND", selector);
+//        NSLog(@"# RuntimeInvoker # selector: \"%@\" NOT FOUND", selector);
         return nil;
     }
 }
@@ -395,6 +395,23 @@ id _invoke(id target, NSString *selector, NSArray *arguments) {
 
 + (id)invoke:(NSString *)selector arguments:(NSArray *)arguments {
     return _invoke(self.class, selector, arguments);
+}
+
+@end
+
+@implementation NSString (RuntimeInvoker)
+
+- (id)invokeClassMethod:(NSString *)selector {
+    return [self invokeClassMethod:selector arguments:nil];
+}
+
+- (id)invokeClassMethod:(NSString *)selector args:(id)arg, ... {
+    _DEFINE_ARRAY(arg);
+    return [self invokeClassMethod:selector arguments:array];
+}
+
+- (id)invokeClassMethod:(NSString *)selector arguments:(NSArray *)arguments {
+    return [NSClassFromString(self) invoke:selector arguments:arguments];
 }
 
 @end

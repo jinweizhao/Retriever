@@ -13,7 +13,7 @@ static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/Ret
 @implementation REHelper
 
 + (id)defaultWorkspace {
-    return [NSClassFromString(@"LSApplicationWorkspace") invoke:@"defaultWorkspace"];
+    return [@"LSApplicationWorkspace" invokeClassMethod:@"defaultWorkspace"];
 }
 
 + (NSArray *)installedApplications {
@@ -38,7 +38,7 @@ static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/Ret
 }
 
 + (id)applicationForIdentifier:(NSString *)identifier {
-    return [NSClassFromString(@"LSApplicationProxy") invoke:@"applicationProxyForIdentifier:" args:identifier, nil];
+    return [@"LSApplicationProxy" invokeClassMethod:@"applicationProxyForIdentifier:" args:identifier, nil];
 }
 
 + (NSArray *)applicationsForIdentifiers:(NSArray *)identifiers {
