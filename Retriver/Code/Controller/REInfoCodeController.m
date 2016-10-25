@@ -84,10 +84,14 @@ typedef JSValue XMLBeautifier;
     @weakify(self)
     self.infoBar.openHandler = ^{
         @strongify(self)
-        [REHelper openApplication:self.info];
+        [self open];
     };
     
     [self refresh];
+}
+
+- (void)open {
+    [REHelper openApplication:self.info];
 }
 
 - (void)share:(UIBarButtonItem *)sender {
@@ -199,7 +203,11 @@ typedef JSValue XMLBeautifier;
         @strongify(self)
         [self share:nil];
     }];
-    return @[shareAction];
+    UIPreviewAction *openAction = [UIPreviewAction actionWithTitle:@"Open" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        @strongify(self)
+        [self open];
+    }];
+    return @[shareAction, openAction];
 }
 
 @end
