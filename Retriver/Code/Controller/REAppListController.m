@@ -60,11 +60,25 @@ typedef NS_ENUM(NSInteger, REListType) {
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [refreshControl addTarget:self
+                       action:@selector(didRefreshControlValueChanged:)
+             forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         [self registerForPreviewingWithDelegate:self sourceView:self.tableView];
     }
     
     [self refresh];
+}
+
+- (void)didRefreshControlValueChanged:(UIRefreshControl *)sender {
+    [self refresh];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [sender endRefreshing];
+    });
 }
 
 - (UISegmentedControl *)segmentedControl {
@@ -78,33 +92,38 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)refresh {
     
-    NSArray *apps = [REHelper installedApplications];
-    NSArray *plugins = [REHelper installedPlugins];
-    NSArray *identifiers = [RECache favouriteAppIdentifiers];
-    self.identifierSet = [NSMutableSet setWithArray:identifiers];
-    NSArray *favourites = [REHelper applicationsForIdentifiers:identifiers];
-    NSArray *data;
-    
-    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
-                  forSegmentAtIndex:REListTypeApp];
-    [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
-                  forSegmentAtIndex:REListTypePlugin];
-    
-    switch (self.segmentedControl.selectedSegmentIndex) {
-        case REListTypeApp: data = apps; break;
-        case REListTypePlugin: data = plugins; break;
-        case REListTypeFavourite: data = favourites; break;
-        default: break;
-    }
-    
-    self.list = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        NSString *name1 = [REHelper displayNameForApplication:obj1];
-        NSString *name2 = [REHelper displayNameForApplication:obj2];
-        return [name1 compare:name2];
-    }];
-    self.filtered = self.list;
-    
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSArray *apps = [REHelper installedApplications];
+        NSArray *plugins = [REHelper installedPlugins];
+        NSArray *identifiers = [RECache favouriteAppIdentifiers];
+        self.identifierSet = [NSMutableSet setWithArray:identifiers];
+        NSArray *favourites = [REHelper applicationsForIdentifiers:identifiers];
+        NSArray *data;
+        
+        switch (self.segmentedControl.selectedSegmentIndex) {
+            case REListTypeApp: data = apps; break;
+            case REListTypePlugin: data = plugins; break;
+            case REListTypeFavourite: data = favourites; break;
+            default: break;
+        }
+        
+        self.list = [data sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            NSString *name1 = [REHelper displayNameForApplication:obj1];
+            NSString *name2 = [REHelper displayNameForApplication:obj2];
+            return [name1 compare:name2];
+        }];
+        self.filtered = self.list;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
+                          forSegmentAtIndex:REListTypeApp];
+            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
+                          forSegmentAtIndex:REListTypePlugin];
+            [self.segmentedControl sizeToFit];
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (REInfoCodeController *)codeControllerAtIndexPath:(NSIndexPath *)indexPath {
