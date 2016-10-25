@@ -116,9 +116,9 @@ typedef NS_ENUM(NSInteger, REListType) {
         self.filtered = self.list;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%d)", (int)apps.count]
+            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Apps (%tu)", apps.count]
                           forSegmentAtIndex:REListTypeApp];
-            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%d)", (int)plugins.count]
+            [self.segmentedControl setTitle:[NSString stringWithFormat:@"Plugins (%tu)", plugins.count]
                           forSegmentAtIndex:REListTypePlugin];
             [self.segmentedControl sizeToFit];
             [self.tableView reloadData];
