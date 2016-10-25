@@ -8,7 +8,7 @@
 
 #import "REHelper.h"
 
-static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/retriver";
+static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/Retriver";
 
 @implementation REHelper
 
