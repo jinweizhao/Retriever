@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8712F9ED1DBEF9730051ABA1 /* RECache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8712F9EC1DBEF9730051ABA1 /* RECache.m */; };
-		8712F9EF1DBF37500051ABA1 /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 8712F9EE1DBF37500051ABA1 /* theme.css */; };
+		8712F9F41DBF39A20051ABA1 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 8712F9F11DBF39A20051ABA1 /* highlight.js */; };
+		8712F9F51DBF39A20051ABA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8712F9F21DBF39A20051ABA1 /* LICENSE */; };
+		8712F9F61DBF39A20051ABA1 /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 8712F9F31DBF39A20051ABA1 /* theme.css */; };
+		8712F9F91DBF39BE0051ABA1 /* vkbeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 8712F9F81DBF39BE0051ABA1 /* vkbeautify.js */; };
 		877EF9181DB9B08300D83C27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9171DB9B08300D83C27 /* main.m */; };
 		877EF9491DB9B77500D83C27 /* REAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF93F1DB9B77500D83C27 /* REAppDelegate.m */; };
 		877EF94A1DB9B77500D83C27 /* REAppListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9421DB9B77500D83C27 /* REAppListController.m */; };
@@ -28,9 +31,6 @@
 		877EF97C1DB9B9CD00D83C27 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF97A1DB9B9CD00D83C27 /* EXTScope.m */; };
 		877EF9861DB9BE7000D83C27 /* REInfoTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877EF9851DB9BE7000D83C27 /* REInfoTreeController.m */; };
 		8787A4771DBDA4E60059E916 /* REInfoCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A4761DBDA4E60059E916 /* REInfoCodeController.m */; };
-		8787A4D01DBDACE90059E916 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47A1DBDACE90059E916 /* highlight.js */; };
-		8787A4D11DBDACE90059E916 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8787A47B1DBDACE90059E916 /* LICENSE */; };
-		8787A5251DBDD8F10059E916 /* vkbeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 8787A5241DBDD8F10059E916 /* vkbeautify.js */; };
 		8787A5D61DBE53620059E916 /* REAppDelegate+Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A5D51DBE53620059E916 /* REAppDelegate+Shortcut.m */; };
 		8787A5DC1DBE5E550059E916 /* REAppInfoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787A5DB1DBE5E550059E916 /* REAppInfoBar.m */; };
 		87A5F1111DBA1A6C00CE6772 /* REHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F1101DBA1A6C00CE6772 /* REHelper.m */; };
@@ -43,7 +43,10 @@
 /* Begin PBXFileReference section */
 		8712F9EB1DBEF9730051ABA1 /* RECache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECache.h; sourceTree = "<group>"; };
 		8712F9EC1DBEF9730051ABA1 /* RECache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECache.m; sourceTree = "<group>"; };
-		8712F9EE1DBF37500051ABA1 /* theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = theme.css; sourceTree = "<group>"; };
+		8712F9F11DBF39A20051ABA1 /* highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.js; sourceTree = "<group>"; };
+		8712F9F21DBF39A20051ABA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8712F9F31DBF39A20051ABA1 /* theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = theme.css; sourceTree = "<group>"; };
+		8712F9F81DBF39BE0051ABA1 /* vkbeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vkbeautify.js; sourceTree = "<group>"; };
 		877EF9131DB9B08300D83C27 /* Retriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Retriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877EF9171DB9B08300D83C27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		877EF9271DB9B08300D83C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,9 +92,6 @@
 		877EF9871DB9BECE00D83C27 /* REDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
 		8787A4751DBDA4E60059E916 /* REInfoCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REInfoCodeController.h; sourceTree = "<group>"; };
 		8787A4761DBDA4E60059E916 /* REInfoCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REInfoCodeController.m; sourceTree = "<group>"; };
-		8787A47A1DBDACE90059E916 /* highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.js; sourceTree = "<group>"; };
-		8787A47B1DBDACE90059E916 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8787A5241DBDD8F10059E916 /* vkbeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vkbeautify.js; sourceTree = "<group>"; };
 		8787A5D41DBE53620059E916 /* REAppDelegate+Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "REAppDelegate+Shortcut.h"; sourceTree = "<group>"; };
 		8787A5D51DBE53620059E916 /* REAppDelegate+Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "REAppDelegate+Shortcut.m"; sourceTree = "<group>"; };
 		8787A5DA1DBE5E550059E916 /* REAppInfoBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REAppInfoBar.h; sourceTree = "<group>"; };
@@ -119,6 +119,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8712F9F01DBF39A20051ABA1 /* highlight */ = {
+			isa = PBXGroup;
+			children = (
+				8712F9F11DBF39A20051ABA1 /* highlight.js */,
+				8712F9F31DBF39A20051ABA1 /* theme.css */,
+				8712F9F21DBF39A20051ABA1 /* LICENSE */,
+			);
+			path = highlight;
+			sourceTree = "<group>";
+		};
+		8712F9F71DBF39BE0051ABA1 /* vkbeautify */ = {
+			isa = PBXGroup;
+			children = (
+				8712F9F81DBF39BE0051ABA1 /* vkbeautify.js */,
+			);
+			path = vkbeautify;
+			sourceTree = "<group>";
+		};
 		877EF90A1DB9B08300D83C27 = {
 			isa = PBXGroup;
 			children = (
@@ -158,8 +176,6 @@
 		877EF9311DB9B68700D83C27 /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
-				8787A4781DBDACE90059E916 /* highlight */,
-				8787A5241DBDD8F10059E916 /* vkbeautify.js */,
 				877EF94C1DB9B7AE00D83C27 /* Media.xcassets */,
 				877EF94E1DB9B7C000D83C27 /* LaunchScreen.storyboard */,
 			);
@@ -217,6 +233,8 @@
 		877EF9441DB9B77500D83C27 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8712F9F01DBF39A20051ABA1 /* highlight */,
+				8712F9F71DBF39BE0051ABA1 /* vkbeautify */,
 				877EF9781DB9B9CD00D83C27 /* libextobjc */,
 				877EF9501DB9B8E300D83C27 /* Masonry */,
 				877EF9451DB9B77500D83C27 /* RuntimeInvoker */,
@@ -289,16 +307,6 @@
 			path = libextobjc;
 			sourceTree = "<group>";
 		};
-		8787A4781DBDACE90059E916 /* highlight */ = {
-			isa = PBXGroup;
-			children = (
-				8787A47A1DBDACE90059E916 /* highlight.js */,
-				8712F9EE1DBF37500051ABA1 /* theme.css */,
-				8787A47B1DBDACE90059E916 /* LICENSE */,
-			);
-			path = highlight;
-			sourceTree = "<group>";
-		};
 		87A5F1161DBA67F500CE6772 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,12 +377,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8712F9F91DBF39BE0051ABA1 /* vkbeautify.js in Resources */,
 				877EF94D1DB9B7AE00D83C27 /* Media.xcassets in Resources */,
-				8787A5251DBDD8F10059E916 /* vkbeautify.js in Resources */,
 				877EF94F1DB9B7C000D83C27 /* LaunchScreen.storyboard in Resources */,
-				8712F9EF1DBF37500051ABA1 /* theme.css in Resources */,
-				8787A4D11DBDACE90059E916 /* LICENSE in Resources */,
-				8787A4D01DBDACE90059E916 /* highlight.js in Resources */,
+				8712F9F41DBF39A20051ABA1 /* highlight.js in Resources */,
+				8712F9F51DBF39A20051ABA1 /* LICENSE in Resources */,
+				8712F9F61DBF39A20051ABA1 /* theme.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
