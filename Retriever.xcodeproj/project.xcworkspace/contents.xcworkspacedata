@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Retriver.xcodeproj">
+      location = "self:/Users/cyan/Documents/code/iOS/retriver/Retriever.xcodeproj">
    </FileRef>
 </Workspace>

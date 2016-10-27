@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "877EF9121DB9B08300D83C27"
-               BuildableName = "Retriver.app"
-               BlueprintName = "Retriver"
-               ReferencedContainer = "container:Retriver.xcodeproj">
+               BuildableName = "Retriever.app"
+               BlueprintName = "Retriever"
+               ReferencedContainer = "container:Retriever.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "877EF9121DB9B08300D83C27"
-            BuildableName = "Retriver.app"
-            BlueprintName = "Retriver"
-            ReferencedContainer = "container:Retriver.xcodeproj">
+            BuildableName = "Retriever.app"
+            BlueprintName = "Retriever"
+            ReferencedContainer = "container:Retriever.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "877EF9121DB9B08300D83C27"
-            BuildableName = "Retriver.app"
-            BlueprintName = "Retriver"
-            ReferencedContainer = "container:Retriver.xcodeproj">
+            BuildableName = "Retriever.app"
+            BlueprintName = "Retriever"
+            ReferencedContainer = "container:Retriever.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "877EF9121DB9B08300D83C27"
-            BuildableName = "Retriver.app"
-            BlueprintName = "Retriver"
-            ReferencedContainer = "container:Retriver.xcodeproj">
+            BuildableName = "Retriever.app"
+            BlueprintName = "Retriever"
+            ReferencedContainer = "container:Retriever.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
