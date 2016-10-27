@@ -4,11 +4,10 @@ Retrive InfoPlist without Jailbreak on iOS Devices
 # Usage
 1. Build & Run this project on your iOS Device
 2. Click app name list on home page
-3. Plist file will display as a list
-4. Click `Code` button to view source code (JSON/XML)
-5. Click top-right button to share Plist file with Share Sheet
-6. Click `CFBundleURLTypes` if you're looking for URL Schemes
-7. Click `Apps` or `Plugins` to switch
+3. Click `Apps/Plugins` to switch type
+4. Plist file will display as JSON format
+5. Click `JSON/XML/Tree` to toggle display style
+6. Click `Share` button to share Plist file with Share Sheet
 
 # Screenshots
 
