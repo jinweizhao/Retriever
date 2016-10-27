@@ -1,5 +1,5 @@
 # Retriver
-Retrive InfoPlist without Jailbreak on iOS Devices
+Retrieve InfoPlist without Jailbreak on iOS Devices
 
 # Usage
 1. Build & Run this project on your iOS Device
