@@ -1,6 +1,6 @@
 //
 //  REAppDelegate+Shortcut.m
-//  Retriver
+//  Retriever
 //
 //  Created by cyan on 2016/10/24.
 //  Copyright © 2016年 cyan. All rights reserved.
@@ -12,7 +12,7 @@
 
 - (void)performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem {
     if ([shortcutItem.type isEqualToString:@"Share"]) {
-        [REHelper shareRetriver];
+        [REHelper shareRetriever];
     } else if ([shortcutItem.type isEqualToString:@"GitHub"]) {
         [REHelper openGitHub];
     }

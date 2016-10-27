@@ -1,6 +1,6 @@
 //
 //  REHelper.m
-//  Retriver
+//  Retriever
 //
 //  Created by cyan on 2016/10/21.
 //  Copyright © 2016年 cyan. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "REHelper.h"
 
-static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/Retriver";
+static NSString *const kRERetrieverGitHubURL = @"https://github.com/cyanzhong/Retriever";
 
 @implementation REHelper
 
@@ -55,13 +55,13 @@ static NSString *const kRERetriverGitHubURL = @"https://github.com/cyanzhong/Ret
 }
 
 + (void)openGitHub {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kRERetriverGitHubURL]
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kRERetrieverGitHubURL]
                                        options:@{}
                              completionHandler:nil];
 }
 
-+ (void)shareRetriver {
-    NSArray *items = @[[NSURL URLWithString:kRERetriverGitHubURL], [UIImage imageNamed:@"AppIcon60x60@3x.png"], @"Retriver: Retrive InfoPlist without Jailbreak on iOS Devices"];
++ (void)shareRetriever {
+    NSArray *items = @[[NSURL URLWithString:kRERetrieverGitHubURL], [UIImage imageNamed:@"AppIcon60x60@3x.png"], @"Retriever: Retrieve InfoPlist without Jailbreak on iOS Devices"];
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:items
                                                                              applicationActivities:nil];
     [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:controller
