@@ -1,6 +1,10 @@
 # Retriver
 Retrieve InfoPlist without Jailbreak on iOS Devices
 
+# Compability
+1. Xcode: Greater than or equal to Xcode 8.0
+2. iOS: Greater than or equal to iOS 10.0
+
 # Usage
 1. Build & Run this project on your iOS Device
 2. Click app name list on home page
