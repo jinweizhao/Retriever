@@ -37,7 +37,7 @@ Retrieve InfoPlist without Jailbreak on iOS Devices
 4. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
 
 # ⚠️
-Retriver based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
+Retriever based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
 
 # License
 [`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
