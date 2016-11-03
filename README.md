@@ -1,4 +1,4 @@
-# Retriver
+# Retriever
 Retrieve InfoPlist without Jailbreak on iOS Devices
 
 # Compability
