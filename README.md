@@ -29,6 +29,7 @@ Retrieve InfoPlist without Jailbreak on iOS Devices
 # Next Step
 1. More information
 2. Better UX
+3. Global search
 
 # Reference
 1. [`iOS-Runtime-Headers`](https://github.com/nst/iOS-Runtime-Headers/)
