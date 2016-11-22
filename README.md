@@ -1,5 +1,5 @@
 # Retriever
-Retrieve InfoPlist without Jailbreak on iOS Devices
+Retrieving InfoPlist without Jailbreaking on iOS Devices
 
 # Compability
 1. Xcode: Greater than or equal to Xcode 8.0
@@ -38,7 +38,7 @@ Retrieve InfoPlist without Jailbreak on iOS Devices
 4. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
 
 # ⚠️
-Retriever based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
+Retriever is based on tons of `PRIVATE` APIs, publishing to App Store is absolutely impossible 
 
 # License
 [`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
