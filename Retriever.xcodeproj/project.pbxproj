@@ -125,7 +125,9 @@
 				879B795B1DC2641300191BEE /* Retriever */,
 				877EF9141DB9B08300D83C27 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		877EF9141DB9B08300D83C27 /* Products */ = {
 			isa = PBXGroup;
