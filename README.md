@@ -1,4 +1,4 @@
-# Retriver
+# Retriever
 Retrieve InfoPlist without Jailbreak on iOS Devices
 
 # Compability
@@ -29,6 +29,7 @@ Retrieve InfoPlist without Jailbreak on iOS Devices
 # Next Step
 1. More information
 2. Better UX
+3. Global search
 
 # Reference
 1. [`iOS-Runtime-Headers`](https://github.com/nst/iOS-Runtime-Headers/)
@@ -37,7 +38,7 @@ Retrieve InfoPlist without Jailbreak on iOS Devices
 4. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
 
 # ⚠️
-Retriver based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
+Retriever based on tons of `PRIVATE` APIs, publish to App Store is absolutely impossible 
 
 # License
 [`WTFPL`](https://en.wikipedia.org/wiki/WTFPL)
