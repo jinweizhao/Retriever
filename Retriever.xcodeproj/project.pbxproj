@@ -38,6 +38,7 @@
 		879B79C51DC2641300191BEE /* REAppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A31DC2641300191BEE /* REAppInfoCell.m */; };
 		879B79C61DC2641300191BEE /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A51DC2641300191BEE /* REAppListCell.m */; };
 		879B79C81DC2641300191BEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A71DC2641300191BEE /* main.m */; };
+		87C56CE71DE44F6F00062BF6 /* REWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C56CE61DE44F6F00062BF6 /* REWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,8 @@
 		879B79A61DC2641300191BEE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		879B79A71DC2641300191BEE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		879B79A81DC2641300191BEE /* REPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPrefixHeader.pch; sourceTree = "<group>"; };
+		87C56CE51DE44F6F00062BF6 /* REWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWebView.h; sourceTree = "<group>"; };
+		87C56CE61DE44F6F00062BF6 /* REWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +298,8 @@
 				879B79A31DC2641300191BEE /* REAppInfoCell.m */,
 				879B79A41DC2641300191BEE /* REAppListCell.h */,
 				879B79A51DC2641300191BEE /* REAppListCell.m */,
+				87C56CE51DE44F6F00062BF6 /* REWebView.h */,
+				87C56CE61DE44F6F00062BF6 /* REWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				879B79B91DC2641300191BEE /* MASLayoutConstraint.m in Sources */,
 				879B79B71DC2641300191BEE /* MASConstraint.m in Sources */,
 				879B79BD1DC2641300191BEE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				87C56CE71DE44F6F00062BF6 /* REWebView.m in Sources */,
 				879B79B61DC2641300191BEE /* MASCompositeConstraint.m in Sources */,
 				879B79B01DC2641300191BEE /* RECache.m in Sources */,
 				879B79AD1DC2641300191BEE /* REAppListController.m in Sources */,
