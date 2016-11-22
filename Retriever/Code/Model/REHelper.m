@@ -34,7 +34,7 @@ static NSString *const kRERetrieverGitHubURL = @"https://github.com/cyanzhong/Re
 
 + (UIImage *)iconImageForApplication:(id)app {
     return [UIImage invoke:@"_applicationIconImageForBundleIdentifier:format:scale:"
-                 arguments:@[[self bundleIdentifierForApplication:app], @(10), @([UIScreen mainScreen].scale)]];
+                 arguments:@[[self bundleIdentifierForApplication:app], @(0), @([UIScreen mainScreen].scale)]];
 }
 
 + (id)applicationForIdentifier:(NSString *)identifier {
