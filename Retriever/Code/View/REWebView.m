@@ -8,7 +8,7 @@
 
 #import "REWebView.h"
 
-static const CGFloat kREScreenEdgeInset = 20;
+static const CGFloat kREScreenEdgeInset = 32;
 
 @interface UIView (Extension)
 
