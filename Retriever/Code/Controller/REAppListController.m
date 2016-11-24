@@ -87,7 +87,8 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
     [self refresh];
-    [self.tableView setContentOffset:CGPointMake(0, -64) animated:YES];
+    CGFloat offset = -CGRectGetHeight(self.searchController.searchBar.frame) - CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
+    [self.tableView setContentOffset:CGPointMake(0, offset) animated:YES];
 }
 
 - (void)refresh {
