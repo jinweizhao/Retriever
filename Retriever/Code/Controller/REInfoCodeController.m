@@ -88,7 +88,7 @@ typedef JSValue XMLBeautifier;
     @weakify(self)
     self.infoBar.openHandler = ^{
         @strongify(self)
-        [self open];
+        [self openApplication];
     };
     
     [self refresh];
@@ -100,18 +100,58 @@ typedef JSValue XMLBeautifier;
     }
 }
 
-- (void)open {
+- (void)openApplication {
     [REHelper openApplication:self.info];
 }
 
 - (void)share:(UIBarButtonItem *)sender {
-    NSString *path = AppDocumentPath([NSString stringWithFormat:@"%@.plist", self.displayName]);
-    [self.propertyList writeToFile:path atomically:YES];
-    NSURL *fileUrl = [NSURL fileURLWithPath:path];
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[fileUrl]
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    @weakify(self)
+    void(^shareIconHandler)(UIAlertAction *) = ^(UIAlertAction *action) {
+        @strongify(self)
+        [self shareIcon];
+    };
+    UIAlertAction *shareIconAction = [UIAlertAction actionWithTitle:@"Share Icon"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:shareIconHandler];
+    
+    void(^sharePlistHandler)(UIAlertAction *) = ^(UIAlertAction *action) {
+        @strongify(self)
+        [self sharePlist];
+    };
+    UIAlertAction *sharePlistAction = [UIAlertAction actionWithTitle:@"Share Plist"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:sharePlistHandler];
+    [alertController addAction:shareIconAction];
+    [alertController addAction:sharePlistAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)shareItem:(id)item {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[item]
                                                                                          applicationActivities:nil];
     UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [rootViewController presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)shareIcon {
+    UIImage *image = [REHelper iconImageForApplication:self.info format:2];
+    [self shareItem:image];
+}
+
+- (void)sharePlist {
+    NSString *path = AppDocumentPath([NSString stringWithFormat:@"%@.plist", self.displayName]);
+    [self.propertyList writeToFile:path atomically:YES];
+    NSURL *fileUrl = [NSURL fileURLWithPath:path];
+    [self shareItem:fileUrl];
 }
 
 - (void)didSegmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -209,15 +249,19 @@ typedef JSValue XMLBeautifier;
 
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
     @weakify(self)
-    UIPreviewAction *shareAction = [UIPreviewAction actionWithTitle:@"Share" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+    UIPreviewAction *shareIconAction = [UIPreviewAction actionWithTitle:@"Share Icon" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         @strongify(self)
-        [self share:nil];
+        [self shareIcon];
+    }];
+    UIPreviewAction *sharePlistAction = [UIPreviewAction actionWithTitle:@"Share Plist" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        @strongify(self)
+        [self sharePlist];
     }];
     UIPreviewAction *openAction = [UIPreviewAction actionWithTitle:@"Open" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
         @strongify(self)
-        [self open];
+        [self openApplication];
     }];
-    return @[shareAction, openAction];
+    return @[shareIconAction, sharePlistAction, openAction];
 }
 
 @end
