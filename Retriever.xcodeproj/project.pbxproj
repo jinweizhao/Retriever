@@ -16,9 +16,6 @@
 		879B79AF1DC2641300191BEE /* REInfoTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B796B1DC2641300191BEE /* REInfoTreeController.m */; };
 		879B79B01DC2641300191BEE /* RECache.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B796E1DC2641300191BEE /* RECache.m */; };
 		879B79B11DC2641300191BEE /* REHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79711DC2641300191BEE /* REHelper.m */; };
-		879B79B21DC2641300191BEE /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 879B79741DC2641300191BEE /* highlight.js */; };
-		879B79B31DC2641300191BEE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 879B79751DC2641300191BEE /* LICENSE */; };
-		879B79B41DC2641300191BEE /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 879B79761DC2641300191BEE /* theme.css */; };
 		879B79B51DC2641300191BEE /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79791DC2641300191BEE /* EXTScope.m */; };
 		879B79B61DC2641300191BEE /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B797D1DC2641300191BEE /* MASCompositeConstraint.m */; };
 		879B79B71DC2641300191BEE /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79801DC2641300191BEE /* MASConstraint.m */; };
@@ -38,7 +35,14 @@
 		879B79C51DC2641300191BEE /* REAppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A31DC2641300191BEE /* REAppInfoCell.m */; };
 		879B79C61DC2641300191BEE /* REAppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A51DC2641300191BEE /* REAppListCell.m */; };
 		879B79C81DC2641300191BEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79A71DC2641300191BEE /* main.m */; };
-		87C56CE71DE44F6F00062BF6 /* REWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C56CE61DE44F6F00062BF6 /* REWebView.m */; };
+		87E64C4D1E2DB48C0058A4B4 /* highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 87E64C3D1E2DB48C0058A4B4 /* highlight.js */; };
+		87E64C4E1E2DB48C0058A4B4 /* HOCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C3F1E2DB48C0058A4B4 /* HOCodeView.m */; };
+		87E64C4F1E2DB48C0058A4B4 /* HOHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C411E2DB48C0058A4B4 /* HOHighlighter.m */; };
+		87E64C501E2DB48C0058A4B4 /* HOTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C431E2DB48C0058A4B4 /* HOTextStorage.m */; };
+		87E64C511E2DB48C0058A4B4 /* HOTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C451E2DB48C0058A4B4 /* HOTheme.m */; };
+		87E64C531E2DB48C0058A4B4 /* NSString+HO.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C491E2DB48C0058A4B4 /* NSString+HO.m */; };
+		87E64C541E2DB48C0058A4B4 /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 87E64C4A1E2DB48C0058A4B4 /* theme.css */; };
+		87E64C551E2DB48C0058A4B4 /* UIColor+HO.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E64C4C1E2DB48C0058A4B4 /* UIColor+HO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,9 +64,6 @@
 		879B796F1DC2641300191BEE /* REDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDefine.h; sourceTree = "<group>"; };
 		879B79701DC2641300191BEE /* REHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REHelper.h; sourceTree = "<group>"; };
 		879B79711DC2641300191BEE /* REHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REHelper.m; sourceTree = "<group>"; };
-		879B79741DC2641300191BEE /* highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.js; sourceTree = "<group>"; };
-		879B79751DC2641300191BEE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		879B79761DC2641300191BEE /* theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = theme.css; sourceTree = "<group>"; };
 		879B79781DC2641300191BEE /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
 		879B79791DC2641300191BEE /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
 		879B797A1DC2641300191BEE /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
@@ -107,8 +108,20 @@
 		879B79A61DC2641300191BEE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		879B79A71DC2641300191BEE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		879B79A81DC2641300191BEE /* REPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPrefixHeader.pch; sourceTree = "<group>"; };
-		87C56CE51DE44F6F00062BF6 /* REWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REWebView.h; sourceTree = "<group>"; };
-		87C56CE61DE44F6F00062BF6 /* REWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REWebView.m; sourceTree = "<group>"; };
+		87E64C3D1E2DB48C0058A4B4 /* highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.js; sourceTree = "<group>"; };
+		87E64C3E1E2DB48C0058A4B4 /* HOCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOCodeView.h; sourceTree = "<group>"; };
+		87E64C3F1E2DB48C0058A4B4 /* HOCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOCodeView.m; sourceTree = "<group>"; };
+		87E64C401E2DB48C0058A4B4 /* HOHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOHighlighter.h; sourceTree = "<group>"; };
+		87E64C411E2DB48C0058A4B4 /* HOHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOHighlighter.m; sourceTree = "<group>"; };
+		87E64C421E2DB48C0058A4B4 /* HOTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOTextStorage.h; sourceTree = "<group>"; };
+		87E64C431E2DB48C0058A4B4 /* HOTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOTextStorage.m; sourceTree = "<group>"; };
+		87E64C441E2DB48C0058A4B4 /* HOTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOTheme.h; sourceTree = "<group>"; };
+		87E64C451E2DB48C0058A4B4 /* HOTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOTheme.m; sourceTree = "<group>"; };
+		87E64C481E2DB48C0058A4B4 /* NSString+HO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HO.h"; sourceTree = "<group>"; };
+		87E64C491E2DB48C0058A4B4 /* NSString+HO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HO.m"; sourceTree = "<group>"; };
+		87E64C4A1E2DB48C0058A4B4 /* theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = theme.css; sourceTree = "<group>"; };
+		87E64C4B1E2DB48C0058A4B4 /* UIColor+HO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HO.h"; sourceTree = "<group>"; };
+		87E64C4C1E2DB48C0058A4B4 /* UIColor+HO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,23 +223,13 @@
 		879B79721DC2641300191BEE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				879B79731DC2641300191BEE /* highlight */,
+				87E64C3C1E2DB48C0058A4B4 /* HighlightObjC */,
 				879B79981DC2641300191BEE /* vkbeautify */,
 				879B79771DC2641300191BEE /* libextobjc */,
 				879B797B1DC2641300191BEE /* Masonry */,
 				879B79951DC2641300191BEE /* RuntimeInvoker */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		879B79731DC2641300191BEE /* highlight */ = {
-			isa = PBXGroup;
-			children = (
-				879B79741DC2641300191BEE /* highlight.js */,
-				879B79761DC2641300191BEE /* theme.css */,
-				879B79751DC2641300191BEE /* LICENSE */,
-			);
-			path = highlight;
 			sourceTree = "<group>";
 		};
 		879B79771DC2641300191BEE /* libextobjc */ = {
@@ -298,8 +301,6 @@
 				879B79A31DC2641300191BEE /* REAppInfoCell.m */,
 				879B79A41DC2641300191BEE /* REAppListCell.h */,
 				879B79A51DC2641300191BEE /* REAppListCell.m */,
-				87C56CE51DE44F6F00062BF6 /* REWebView.h */,
-				87C56CE61DE44F6F00062BF6 /* REWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +324,27 @@
 				879B79A81DC2641300191BEE /* REPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87E64C3C1E2DB48C0058A4B4 /* HighlightObjC */ = {
+			isa = PBXGroup;
+			children = (
+				87E64C3E1E2DB48C0058A4B4 /* HOCodeView.h */,
+				87E64C3F1E2DB48C0058A4B4 /* HOCodeView.m */,
+				87E64C401E2DB48C0058A4B4 /* HOHighlighter.h */,
+				87E64C411E2DB48C0058A4B4 /* HOHighlighter.m */,
+				87E64C421E2DB48C0058A4B4 /* HOTextStorage.h */,
+				87E64C431E2DB48C0058A4B4 /* HOTextStorage.m */,
+				87E64C441E2DB48C0058A4B4 /* HOTheme.h */,
+				87E64C451E2DB48C0058A4B4 /* HOTheme.m */,
+				87E64C481E2DB48C0058A4B4 /* NSString+HO.h */,
+				87E64C491E2DB48C0058A4B4 /* NSString+HO.m */,
+				87E64C4B1E2DB48C0058A4B4 /* UIColor+HO.h */,
+				87E64C4C1E2DB48C0058A4B4 /* UIColor+HO.m */,
+				87E64C4A1E2DB48C0058A4B4 /* theme.css */,
+				87E64C3D1E2DB48C0058A4B4 /* highlight.js */,
+			);
+			path = HighlightObjC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,11 +407,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				879B79C11DC2641300191BEE /* vkbeautify.js in Resources */,
-				879B79B21DC2641300191BEE /* highlight.js in Resources */,
+				87E64C4D1E2DB48C0058A4B4 /* highlight.js in Resources */,
+				87E64C541E2DB48C0058A4B4 /* theme.css in Resources */,
 				879B79AA1DC2641300191BEE /* Media.xcassets in Resources */,
-				879B79B31DC2641300191BEE /* LICENSE in Resources */,
 				879B79A91DC2641300191BEE /* LaunchScreen.storyboard in Resources */,
-				879B79B41DC2641300191BEE /* theme.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E64C4F1E2DB48C0058A4B4 /* HOHighlighter.m in Sources */,
 				879B79B51DC2641300191BEE /* EXTScope.m in Sources */,
+				87E64C531E2DB48C0058A4B4 /* NSString+HO.m in Sources */,
 				879B79AB1DC2641300191BEE /* REAppDelegate+Shortcut.m in Sources */,
 				879B79C41DC2641300191BEE /* REAppInfoBar.m in Sources */,
 				879B79BC1DC2641300191BEE /* NSArray+MASAdditions.m in Sources */,
@@ -410,7 +433,6 @@
 				879B79B91DC2641300191BEE /* MASLayoutConstraint.m in Sources */,
 				879B79B71DC2641300191BEE /* MASConstraint.m in Sources */,
 				879B79BD1DC2641300191BEE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				87C56CE71DE44F6F00062BF6 /* REWebView.m in Sources */,
 				879B79B61DC2641300191BEE /* MASCompositeConstraint.m in Sources */,
 				879B79B01DC2641300191BEE /* RECache.m in Sources */,
 				879B79AD1DC2641300191BEE /* REAppListController.m in Sources */,
@@ -422,9 +444,13 @@
 				879B79BB1DC2641300191BEE /* MASViewConstraint.m in Sources */,
 				879B79AE1DC2641300191BEE /* REInfoCodeController.m in Sources */,
 				879B79C21DC2641300191BEE /* RETableView.m in Sources */,
+				87E64C4E1E2DB48C0058A4B4 /* HOCodeView.m in Sources */,
+				87E64C551E2DB48C0058A4B4 /* UIColor+HO.m in Sources */,
+				87E64C511E2DB48C0058A4B4 /* HOTheme.m in Sources */,
 				879B79BA1DC2641300191BEE /* MASViewAttribute.m in Sources */,
 				879B79C31DC2641300191BEE /* RETableViewCell.m in Sources */,
 				879B79C61DC2641300191BEE /* REAppListCell.m in Sources */,
+				87E64C501E2DB48C0058A4B4 /* HOTextStorage.m in Sources */,
 				879B79C51DC2641300191BEE /* REAppInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
