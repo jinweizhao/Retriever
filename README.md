@@ -35,7 +35,8 @@ Retrieving InfoPlist without Jailbreaking on iOS Devices
 1. [`iOS-Runtime-Headers`](https://github.com/nst/iOS-Runtime-Headers/)
 2. [`RuntimeInvoker`](https://github.com/cyanzhong/RuntimeInvoker)
 3. [`highlight.js`](https://highlightjs.org/)
-4. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
+4. [`Highlightr`](https://github.com/raspu/Highlightr)
+5. [`vkBeautify`](https://github.com/vkiryukhin/vkBeautify)
 
 # ⚠️
 Retriever is based on tons of `PRIVATE` APIs, publishing to App Store is absolutely impossible 
