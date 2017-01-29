@@ -123,4 +123,16 @@ vkbeautify.prototype.xml = function(text, step) {
     return (str[0] == '\n') ? str.slice(1) : str;
 }
 
-var beautifier = new vkbeautify();
+vkbeautify.prototype.json = function(text, step) {
+
+    var step = step ? step : this.step;
+
+    if (typeof JSON === 'undefined') return text;
+
+    if (typeof text === "string") return JSON.stringify(JSON.parse(text), null, step);
+    if (typeof text === "object") return JSON.stringify(text, null, step);
+
+    return text; // text is not string nor object
+}
+
+var parser = new vkbeautify();

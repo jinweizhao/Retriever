@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Retriver.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8723F0081E3E0EAF00964995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8723F03B1E3E165E00964995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8723F0EB1E3E388000964995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>877EF9121DB9B08300D83C27</key>
 		<dict>
 			<key>primary</key>

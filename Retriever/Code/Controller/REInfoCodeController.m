@@ -210,11 +210,12 @@ typedef JSValue XMLBeautifier;
 - (JSValue *)beautifier {
     if (_beautifier == nil) {
         JSContext *context = [[JSContext alloc] init];
-        NSString *script = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"vkbeautify" ofType:@"js"]
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSString *script = [NSString stringWithContentsOfFile:[bundle pathForResource:@"vkbeautify" ofType:@"js"]
                                                      encoding:NSUTF8StringEncoding
                                                         error:nil];
         [context evaluateScript:script];
-        _beautifier = context[@"beautifier"][@"xml"];
+        _beautifier = context[@"parser"][@"xml"];
     }
     return _beautifier;
 }

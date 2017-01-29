@@ -7,8 +7,9 @@
 //
 
 #import "REAppDelegate.h"
-#import "REAppListController.h"
+#import "REAppDelegate+URL.h"
 #import "REAppDelegate+Shortcut.h"
+#import "REAppListController.h"
 
 @interface REAppDelegate()
 
@@ -29,6 +30,18 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self.viewController refresh];
+}
+
+#pragma mark - URL
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [self handleURL:url];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    [self handleURL:url];
+    return YES;
 }
 
 #pragma mark - Shortcut

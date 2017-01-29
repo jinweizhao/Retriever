@@ -42,7 +42,7 @@ static NSString *const kTokenSpanEnd = @"/span>";
             context.exception = exception;
         };
         
-        _bundle = [NSBundle mainBundle];
+        _bundle = [NSBundle bundleForClass:self.class];
         _escapeRegex = [NSRegularExpression regularExpressionWithPattern:@"&#?[a-zA-Z0-9]+?;"
                                                                  options:NSRegularExpressionCaseInsensitive
                                                                    error:nil];
