@@ -25,6 +25,9 @@ Retrieving InfoPlist without Jailbreaking on iOS Devices
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/4.PNG)
 ## Favourite Apps
 ![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/5.PNG)
+## Retrieve App Store Information (with `App Extension`)
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/6.PNG)
+![image](https://github.com/cyanzhong/retriver/raw/master/Screenshots/7.PNG)
 
 # Next Step
 1. More information
