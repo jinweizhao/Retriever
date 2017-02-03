@@ -30,12 +30,13 @@
 		8723F0E41E3E37C300964995 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8723F0CC1E3E37C300964995 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		8723F0E51E3E37C300964995 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8723F0CE1E3E37C300964995 /* View+MASAdditions.m */; };
 		8723F0E61E3E37C300964995 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8723F0D11E3E37C300964995 /* ViewController+MASAdditions.m */; };
-		8723F0E71E3E37C300964995 /* vkbeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 8723F0D31E3E37C300964995 /* vkbeautify.js */; };
 		8723F0F01E3E388000964995 /* ActionRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8723F0EF1E3E388000964995 /* ActionRequestHandler.m */; };
 		8723F0F61E3E388000964995 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8723F0EC1E3E388000964995 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8723F0FA1E3E3E0A00964995 /* RuntimeInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79971DC2641300191BEE /* RuntimeInvoker.m */; };
 		8723F0FE1E3E3F9000964995 /* REAppDelegate+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8723F0FD1E3E3F9000964995 /* REAppDelegate+URL.m */; };
 		8723F1041E3E4B3D00964995 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723F1031E3E4B3D00964995 /* Media.xcassets */; };
+		87672CD81E44829C00F79C6E /* VKBeautify.js in Resources */ = {isa = PBXBuildFile; fileRef = 87672CD61E44829C00F79C6E /* VKBeautify.js */; };
+		87672CD91E44829C00F79C6E /* VKBeautify.m in Sources */ = {isa = PBXBuildFile; fileRef = 87672CD71E44829C00F79C6E /* VKBeautify.m */; };
 		879B79A91DC2641300191BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 879B795D1DC2641300191BEE /* LaunchScreen.storyboard */; };
 		879B79AA1DC2641300191BEE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879B795E1DC2641300191BEE /* Media.xcassets */; };
 		879B79AB1DC2641300191BEE /* REAppDelegate+Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 879B79621DC2641300191BEE /* REAppDelegate+Shortcut.m */; };
@@ -140,7 +141,6 @@
 		8723F0CF1E3E37C300964995 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		8723F0D01E3E37C300964995 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		8723F0D11E3E37C300964995 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		8723F0D31E3E37C300964995 /* vkbeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vkbeautify.js; sourceTree = "<group>"; };
 		8723F0EC1E3E388000964995 /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8723F0EE1E3E388000964995 /* ActionRequestHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionRequestHandler.h; sourceTree = "<group>"; };
 		8723F0EF1E3E388000964995 /* ActionRequestHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionRequestHandler.m; sourceTree = "<group>"; };
@@ -148,6 +148,9 @@
 		8723F0FC1E3E3F9000964995 /* REAppDelegate+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "REAppDelegate+URL.h"; sourceTree = "<group>"; };
 		8723F0FD1E3E3F9000964995 /* REAppDelegate+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "REAppDelegate+URL.m"; sourceTree = "<group>"; };
 		8723F1031E3E4B3D00964995 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		87672CD51E44829C00F79C6E /* VKBeautify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKBeautify.h; sourceTree = "<group>"; };
+		87672CD61E44829C00F79C6E /* VKBeautify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = VKBeautify.js; sourceTree = "<group>"; };
+		87672CD71E44829C00F79C6E /* VKBeautify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKBeautify.m; sourceTree = "<group>"; };
 		877EF9131DB9B08300D83C27 /* Retriever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Retriever.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879B795D1DC2641300191BEE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		879B795E1DC2641300191BEE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -264,14 +267,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		8723F0D21E3E37C300964995 /* vkbeautify */ = {
-			isa = PBXGroup;
-			children = (
-				8723F0D31E3E37C300964995 /* vkbeautify.js */,
-			);
-			path = vkbeautify;
-			sourceTree = "<group>";
-		};
 		8723F0ED1E3E388000964995 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +284,16 @@
 				8723F0F31E3E388000964995 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87672CD41E44829C00F79C6E /* VKBeautify */ = {
+			isa = PBXGroup;
+			children = (
+				87672CD51E44829C00F79C6E /* VKBeautify.h */,
+				87672CD71E44829C00F79C6E /* VKBeautify.m */,
+				87672CD61E44829C00F79C6E /* VKBeautify.js */,
+			);
+			path = VKBeautify;
 			sourceTree = "<group>";
 		};
 		877EF90A1DB9B08300D83C27 = {
@@ -393,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				8723F0A51E3E37C300964995 /* HighlightObjC */,
-				8723F0D21E3E37C300964995 /* vkbeautify */,
+				87672CD41E44829C00F79C6E /* VKBeautify */,
 				8723F0B81E3E37C300964995 /* Masonry */,
 				879B79951DC2641300191BEE /* RuntimeInvoker */,
 				8723F0B41E3E37C300964995 /* libextobjc */,
@@ -539,7 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8723F0D41E3E37C300964995 /* highlight.js in Resources */,
-				8723F0E71E3E37C300964995 /* vkbeautify.js in Resources */,
+				87672CD81E44829C00F79C6E /* VKBeautify.js in Resources */,
 				879B79AA1DC2641300191BEE /* Media.xcassets in Resources */,
 				879B79A91DC2641300191BEE /* LaunchScreen.storyboard in Resources */,
 				8723F0DA1E3E37C300964995 /* theme.css in Resources */,
@@ -572,6 +577,7 @@
 				879B79B01DC2641300191BEE /* RECache.m in Sources */,
 				8723F0D91E3E37C300964995 /* NSString+HO.m in Sources */,
 				879B79AD1DC2641300191BEE /* REAppListController.m in Sources */,
+				87672CD91E44829C00F79C6E /* VKBeautify.m in Sources */,
 				879B79B11DC2641300191BEE /* REHelper.m in Sources */,
 				8723F0E61E3E37C300964995 /* ViewController+MASAdditions.m in Sources */,
 				8723F0E41E3E37C300964995 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -772,6 +778,7 @@
 				8723F0F91E3E388000964995 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		877EF90E1DB9B08300D83C27 /* Build configuration list for PBXProject "Retriever" */ = {
 			isa = XCConfigurationList;

@@ -10,7 +10,7 @@
 #import "REAppStoreController+Private.h"
 #import "REAppStoreController+Website.h"
 #import "HOCodeView.h"
-#import <JavaScriptCore/JavaScriptCore.h>
+#import "VKBeautify.h"
 
 @implementation REAppStoreController (Affiliate)
 
@@ -37,20 +37,10 @@
         
         void(^completionHandler)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
             NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            
-            JSContext *context = [[JSContext alloc] init];
-            NSBundle *bundle = [NSBundle mainBundle];
-            NSString *script = [NSString stringWithContentsOfFile:[bundle pathForResource:@"vkbeautify" ofType:@"js"]
-                                                         encoding:NSUTF8StringEncoding
-                                                            error:nil];
-            [context evaluateScript:script];
-            JSValue *beautifier = context[@"parser"][@"json"];
-            
-            NSString *pretty = [[beautifier callWithArguments:@[json, @(2)]] toString];
+            NSString *pretty = [VKBeautify beautified:json type:VKBeautifySourceTypeJSON];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.affiliateView render:pretty language:@"json"];
             });
-            
             [self stopLoading];
         };
         

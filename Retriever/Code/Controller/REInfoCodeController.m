@@ -8,18 +8,16 @@
 
 #import "REInfoCodeController.h"
 #import <WebKit/WebKit.h>
-#import <JavaScriptCore/JavaScriptCore.h>
 #import "REInfoTreeController.h"
 #import "REAppInfoBar.h"
 #import "HOCodeView.h"
+#import "VKBeautify.h"
 
 typedef NS_ENUM(NSInteger, REInfoCodeType) {
     REInfoCodeTypeJSON      = 0,
     REInfoCodeTypeXML,
     REInfoCodeTypeTree
 };
-
-typedef JSValue XMLBeautifier;
 
 @interface REInfoCodeController ()
 
@@ -30,7 +28,6 @@ typedef JSValue XMLBeautifier;
 @property (nonatomic, copy) NSString *json;
 @property (nonatomic, copy) NSString *xml;
 @property (nonatomic, strong) HOCodeView *codeView;
-@property (nonatomic, strong) XMLBeautifier *beautifier;
 @property (nonatomic, assign) REInfoCodeType selectedType;
 @property (nonatomic, strong) REAppInfoBar *infoBar;
 
@@ -188,9 +185,10 @@ typedef JSValue XMLBeautifier;
 - (NSString *)json {
     if (_json == nil) {
         NSData *data = [NSJSONSerialization dataWithJSONObject:self.propertyList
-                                                       options:NSJSONWritingPrettyPrinted
+                                                       options:0
                                                          error:nil];
-        _json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        _json = [VKBeautify beautified:json type:VKBeautifySourceTypeJSON];
     }
     return _json;
 }
@@ -201,23 +199,10 @@ typedef JSValue XMLBeautifier;
                                                                   format:NSPropertyListXMLFormat_v1_0
                                                                  options:0
                                                                    error:nil];
-        NSArray *arguments = @[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding], @(2)];
-        _xml = [[self.beautifier callWithArguments:arguments] toString];
+        NSString *xml = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        _xml = [VKBeautify beautified:xml type:VKBeautifySourceTypeXML];
     }
     return _xml;
-}
-
-- (JSValue *)beautifier {
-    if (_beautifier == nil) {
-        JSContext *context = [[JSContext alloc] init];
-        NSBundle *bundle = [NSBundle mainBundle];
-        NSString *script = [NSString stringWithContentsOfFile:[bundle pathForResource:@"vkbeautify" ofType:@"js"]
-                                                     encoding:NSUTF8StringEncoding
-                                                        error:nil];
-        [context evaluateScript:script];
-        _beautifier = context[@"parser"][@"xml"];
-    }
-    return _beautifier;
 }
 
 #pragma mark - 3D Touch Menu

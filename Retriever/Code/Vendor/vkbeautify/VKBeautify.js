@@ -135,4 +135,4 @@ vkbeautify.prototype.json = function(text, step) {
     return text; // text is not string nor object
 }
 
-var parser = new vkbeautify();
+var beautifier = new vkbeautify();
