@@ -37,9 +37,10 @@
         }
     };
     
-    NSString *path = [[self.url stringByReplacingOccurrencesOfString:@"https://appsto.re"
-                                                          withString:@""] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSURL *url = [NSURL URLWithString:[@"https://itunes.apple.com/WebObjects/MZStore.woa/wa/redirectToContent?path=" stringByAppendingString:path]];
+    self.path = [self.url stringByReplacingOccurrencesOfString:@"https://appsto.re"
+                                                    withString:@""];
+    NSString *encoded = [self.path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSURL *url = [NSURL URLWithString:[@"https://itunes.apple.com/WebObjects/MZStore.woa/wa/redirectToContent?path=" stringByAppendingString:encoded]];
     [[[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:url]
                                      completionHandler:downloadCompletionHandler] resume];
     

@@ -43,9 +43,18 @@
             });
             [self stopLoading];
         };
+    
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^/.]+/"
+                                                                               options:0
+                                                                                 error:nil];
+        NSTextCheckingResult *match = [regex firstMatchInString:self.path
+                                                        options:0
+                                                          range:NSMakeRange(0, self.path.length)];
+        NSString *region = match ? [self.path substringWithRange:match.range] : @"";
+        NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/%@lookup?id=%@", region, self.appIdentifier];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         
-        NSURL *url = [NSURL URLWithString:[@"https://itunes.apple.com/lookup?id=" stringByAppendingString:self.appIdentifier]];
-        [[[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:url]
+        [[[NSURLSession sharedSession] dataTaskWithRequest:request
                                          completionHandler:completionHandler] resume];
     }
     

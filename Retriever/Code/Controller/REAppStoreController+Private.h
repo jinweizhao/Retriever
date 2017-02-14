@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, AESegmentType) {
 @interface REAppStoreController ()
 
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *path;
 @property (nonatomic, copy) NSString *appIdentifier;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
