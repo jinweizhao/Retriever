@@ -10,6 +10,7 @@
 #import "RETableView.h"
 #import "REAppListCell.h"
 #import "REInfoCodeController.h"
+#import "REInfoTreeController.h"
 
 typedef NS_ENUM(NSInteger, REListType) {
     REListTypeApp       = 0,
@@ -87,8 +88,7 @@ typedef NS_ENUM(NSInteger, REListType) {
 
 - (void)didSegementedControlValueChanged:(UISegmentedControl *)sender {
     [self refresh];
-    CGFloat offset = -CGRectGetHeight(self.searchController.searchBar.frame) - CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]);
-    [self.tableView setContentOffset:CGPointMake(0, offset) animated:YES];
+    [self.tableView setContentOffset:CGPointMake(0, -64) animated:YES];
 }
 
 - (void)refresh {
@@ -145,6 +145,8 @@ typedef NS_ENUM(NSInteger, REListType) {
         cell = [[REAppListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [cell render:self.filtered[indexPath.row]];
+    [cell addIconGestureTarget:self selector:@selector(onIconTapped:)];
+    [cell addCodeSignGestureTarget:self selector:@selector(onSignTapped:)];
     return cell;
 }
 
@@ -184,6 +186,32 @@ typedef NS_ENUM(NSInteger, REListType) {
                                                                       title:title
                                                                     handler:actionHandler];
     return @[action];
+}
+
+#pragma mark - Tapped
+
+- (void)onIconTapped:(UITableViewCell *)cell {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    id app = self.filtered[ indexPath.row ];
+    NSDictionary *dict = [REHelper dictForObject:app];
+    REInfoTreeController *pVC = [[REInfoTreeController alloc] initWithInfo:dict];
+    pVC.title = kREApplicationProxyClass;
+    self.searchController.active = NO;
+    [self.navigationController pushViewController:pVC animated:YES];
+}
+
+- (void)onSignTapped:(UITableViewCell *)cell {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    id app = self.filtered[ indexPath.row ];
+    
+    NSString *codeSign = [app invoke:@"signerIdentity"];
+    if (codeSign) {
+        NSDictionary *dict = @{ @"signerIdentity" : codeSign };
+        REInfoTreeController *pVC = [[REInfoTreeController alloc] initWithInfo:dict];
+        pVC.title = @"CodeSign";
+        self.searchController.active = NO;
+        [self.navigationController pushViewController:pVC animated:YES];
+    }
 }
 
 #pragma mark - Search
